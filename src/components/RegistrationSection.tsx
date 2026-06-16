@@ -8,7 +8,7 @@ export function RegistrationSection() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    setSubmitted(true);
+    window.open('https://thanhtoan.ngaalchemist.com', '_blank');
   };
 
   return (
