@@ -103,7 +103,7 @@ export function BenefitsSection() {
             Không phải để bạn hết đau ngay lập tức. Mà để bạn không còn lạc trong nỗi đau như trước.
           </p>
           <CtaButton
-            onClick={scrollToPricing}
+            onClick={() => window.open('https://thanhtoan.ngaalchemist.com', '_blank')}
             className="bg-[#C9A84C] text-[#1a0a2e] hover:bg-[#E8C96A] rounded-xl px-10 py-5"
             data-testid="button-cta-benefits"
           >
