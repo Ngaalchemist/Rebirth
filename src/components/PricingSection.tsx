@@ -120,7 +120,7 @@ export function PricingSection() {
           className="mb-8"
         >
           <button
-            onClick={scrollToReg}
+            onClick={() => window.open('https://thanhtoan.ngaalchemist.com', '_blank')}
             data-testid="button-cta-pricing"
             className="group w-full flex items-center justify-center gap-3 py-6 rounded-none font-bold text-lg md:text-2xl text-[#140728] bg-[#C9A84C] hover:bg-[#E8C96A] transition-all shadow-[0_8px_30px_rgba(201,168,76,0.4)]"
           >
