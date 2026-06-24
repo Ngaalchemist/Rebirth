@@ -69,8 +69,10 @@ export default async function handler(req, res) {
     await redis.set(`order:${code}`, JSON.stringify(order), { ex: ORDER_TTL_SECONDS });
 
     // Ghi dữ liệu khách hàng vào Google Sheet ngay khi điền form xong (chưa cần đợi thanh toán)
-    // Không chặn response nếu việc ghi sheet bị lỗi/chậm — tránh ảnh hưởng tới UX của khách
-    logToGoogleSheet({
+    // QUAN TRỌNG: phải "await" — Vercel tắt function ngay sau khi response được trả về,
+    // nên nếu không đợi, request gửi sang Google Sheet sẽ bị hủy giữa đường.
+    // Lỗi ở bước này không làm hỏng việc tạo đơn hàng (đã try/catch riêng bên trong).
+    await logToGoogleSheet({
       name,
       phone,
       email: email || "",
@@ -94,17 +96,20 @@ export default async function handler(req, res) {
   }
 }
 
-// Gửi dữ liệu sang Google Sheet (Apps Script Web App) — không chờ kết quả,
-// chỉ log lỗi ra console nếu có, không làm gián đoạn luồng tạo đơn hàng của khách.
-function logToGoogleSheet(data) {
+// Gửi dữ liệu sang Google Sheet (Apps Script Web App).
+// Có await ở nơi gọi để đảm bảo request hoàn tất trước khi function bị Vercel đóng băng.
+// Lỗi ở đây được bắt riêng, không làm hỏng việc tạo đơn hàng chính.
+async function logToGoogleSheet(data) {
   const url = process.env.GOOGLE_SHEET_WEBHOOK_URL;
   if (!url) return;
 
-  fetch(url, {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify(data),
-  }).catch((err) => {
+  try {
+    await fetch(url, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(data),
+    });
+  } catch (err) {
     console.error("logToGoogleSheet error:", err);
-  });
+  }
 }
