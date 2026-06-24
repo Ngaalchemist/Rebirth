@@ -70,8 +70,9 @@ export default async function handler(req, res) {
 
     await redis.set(`order:${code}`, JSON.stringify(order), { ex: 60 * 60 * 24 * 30 });
 
-    // Cập nhật cột "Đã thanh toán" trong Google Sheet — không chờ kết quả
-    updateGoogleSheetPayment(code);
+    // Cập nhật cột "Đã thanh toán" trong Google Sheet — phải await để Vercel không
+    // tắt function trước khi request kịp gửi đi.
+    await updateGoogleSheetPayment(code);
 
     return res.status(200).json({ success: true });
   } catch (err) {
@@ -80,17 +81,19 @@ export default async function handler(req, res) {
   }
 }
 
-// Báo cho Google Sheet biết đơn hàng này đã thanh toán — fire and forget,
-// lỗi ở đây không ảnh hưởng tới việc xác nhận thanh toán chính (đã lưu ở Redis rồi).
-function updateGoogleSheetPayment(orderCode) {
+// Báo cho Google Sheet biết đơn hàng này đã thanh toán.
+// Lỗi ở đây không ảnh hưởng tới việc xác nhận thanh toán chính (đã lưu ở Redis rồi).
+async function updateGoogleSheetPayment(orderCode) {
   const url = process.env.GOOGLE_SHEET_WEBHOOK_URL;
   if (!url) return;
 
-  fetch(url, {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({ action: "update_payment", orderCode }),
-  }).catch((err) => {
+  try {
+    await fetch(url, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ action: "update_payment", orderCode }),
+    });
+  } catch (err) {
     console.error("updateGoogleSheetPayment error:", err);
-  });
+  }
 }
