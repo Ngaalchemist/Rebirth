@@ -32,7 +32,7 @@ export function HeroSection() {
       </div>
 
       {/* ── FULL-BLEED HERO IMAGE (portrait baked into right side) ── */}
-      <div className="relative min-h-[560px] md:min-h-[640px] lg:min-h-[720px] flex items-center">
+      <<div className="relative min-h-[450px] md:min-h-[510px] lg:min-h-[575px] flex items-center">">
         <motion.div
           initial={{ opacity: 0, scale: 1.03 }}
           animate={{ opacity: 1, scale: 1 }}
