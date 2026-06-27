@@ -1,10 +1,10 @@
 import { motion } from "framer-motion";
 import { ChevronRight } from "lucide-react";
 import { TrustBar } from "./CtaButton";
-import stage1 from "@/assets/images/timeline/stage-1.png";
-import stage2 from "@/assets/images/timeline/stage-2.png";
-import stage3 from "@/assets/images/timeline/stage-3.png";
-import stage4 from "@/assets/images/timeline/stage-4.png";
+import stage1 from "@/assets/images/stage-1.png";
+import stage2 from "@/assets/images/stage-2.png";
+import stage3 from "@/assets/images/stage-3.png";
+import stage4 from "@/assets/images/stage-4.png";
 
 const steps = [
   {
