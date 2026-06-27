@@ -1,242 +1,199 @@
 import { motion } from "framer-motion";
 import { ChevronRight } from "lucide-react";
-import { TrustBar } from "./CtaButton";
+import instructorImg from "@/assets/images/instructor-beach.jpg";
 
-const steps = [
+const methods = [
+  "Thôi miên trị liệu",
+  "Timeline healing",
+  "Somatic therapy",
+  "Inner child work",
+  "Shadow work",
+  "Coaching chữa lành",
+];
+
+const storyBefore = [
+  "Mình đứng đây hôm nay không phải như một bậc thầy lý thuyết, mà như một người phụ nữ đã từng bước qua đổ vỡ, tự tay đi qua ngọn lửa tăm tối nhất để nhặt lại từng mảnh vỡ giá trị của chính mình.",
+  'Mình hiểu hơn ai hết cảm giác nhục nhã âm thầm khi phải quỵ lụy xin xỏ sự trân trọng. Mình từng gượng ép bản thân trở nên "hiểu chuyện", cố cho đi nhiều hơn... chỉ để đổi lấy một tấm vé ở lại trong cuộc đời của một người vốn đã coi thường mình.',
+];
+
+const storyAfter = [
+  "Đêm tháng 8 năm 2022.\nNằm bất động trên sàn nhà sau một trận cãi vã nảy lửa với chồng, mình chạm đáy.",
+  "Giây phút tim thắt lại vì kiệt sức và tủi nhục, mình biết một điều duy nhất: Không thể để lòng tự trọng bị chà đạp thêm một giây nào nữa. Mình gom chút dũng khí tàn tạ cuối cùng để ly hôn, bước ra khỏi mối quan hệ độc hại.",
+  "Nhưng bước ra khỏi một người không có nghĩa là thoát khỏi vòng lặp. Ly hôn xong, mình vẫn phải đối diện với sự trống rỗng, nỗi sợ cô đơn và những đêm dài overthinking.",
+  "Sự giải thoát thực sự chỉ bắt đầu khi mình ngừng hướng ra ngoài, dấn thân vào hành trình tự chữa lành nghiêm túc và chọn con đường trở thành một Người thực hành Thôi miên & chữa lành Tiềm thức tầng sâu.",
+];
+
+const proof = [
   {
-    label: "GIAI ĐOẠN 1: NGÀY 1-2",
-    title: "Giải Mã Vòng Lặp & Xây Nền An Toàn",
-    desc: "Giải mã kịch bản bỏ rơi đang lặp lại và phá băng lo âu hệ thần kinh. Thiết lập trạng thái an toàn vững chãi bên trong cơ thể để sẵn sàng cho hành trình chữa lành.",
+    lead: "Mình đã tự mình đi qua và chuyển hóa thật.",
+    body: 'Mình đã dùng chính Thôi miên và Thiền định để bẻ gãy kịch bản "bị bỏ rơi" trong tiềm thức, tái lập lại sự tự tôn từ gốc để kiến tạo một thực tại hoàn toàn mới: Bình an tự thân, làm chủ cảm xúc và tự do tự tại.',
   },
   {
-    label: "GIAI ĐOẠN 2: NGÀY 3-4",
-    title: "Chữa Lành Đứa Trẻ – Giải Phóng Tổn Thương",
-    desc: 'Hóa giải sự tự trách và giải tỏa cảm xúc dồn nén qua thân thể. Đưa "đứa trẻ bên trong" về vùng an toàn bằng sự thấu cảm của người lớn thông thái.',
-  },
-  {
-    label: "GIAI ĐOẠN 3: NGÀY 5-6",
-    title: "Định Hình Ranh Giới – Tái Lập Quyền Năng",
-    desc: 'Xóa bỏ những niềm tin tiêu cực giới hạn và thiết lập "ranh giới thép" để bảo vệ bản thân. Dịch chuyển vị thế từ nạn nhân sang người làm chủ cuộc đời.',
-  },
-  {
-    label: "GIAI ĐOẠN 4: NGÀY 7",
-    title: "Nhảy Lượng Tử - Tái Sinh Bản Sắc Mới",
-    desc: 'Rũ bỏ lớp mặt nạ cũ kỹ, tái sinh một bản sắc mới đầy nội lực và chính thức trở thành "bến đỗ" trọn vẹn, bình an nhất cho chính mình.',
+    lead: "Mình thấu hiểu từ việc đồng hành thực tế.",
+    body: "Mình không chia sẻ bằng những lý thuyết suông trong sách vở. Sự thấu suốt của mình ngày hôm nay được mài dũa từ việc trực tiếp đồng hành, lắng nghe và dẫn dắt những tâm hồn từng vụn vỡ. Mình đã nhìn thấy cấu trúc của nỗi đau, thấy cách tiềm thức vận hành cái bẫy tự hủy hoại, và cũng thấy khoảnh khắc một người phụ nữ bừng tỉnh, thu hồi lại quyền lực nội tâm để làm chủ cuộc đời mình.",
   },
 ];
 
-/* ── Custom gold sunburst / star icon (matches mockup) ── */
-function SunburstIcon({ className = "" }: { className?: string }) {
-  return (
-    <svg viewBox="0 0 48 48" className={className} fill="none">
-      {[...Array(12)].map((_, i) => {
-        const angle = (i * 30 * Math.PI) / 180;
-        const x1 = 24 + Math.cos(angle) * 13;
-        const y1 = 24 + Math.sin(angle) * 13;
-        const x2 = 24 + Math.cos(angle) * 21;
-        const y2 = 24 + Math.sin(angle) * 21;
-        return (
-          <line
-            key={i}
-            x1={x1}
-            y1={y1}
-            x2={x2}
-            y2={y2}
-            stroke="currentColor"
-            strokeWidth="2"
-            strokeLinecap="round"
-          />
-        );
-      })}
-      <circle cx="24" cy="24" r="9" stroke="currentColor" strokeWidth="2" />
-    </svg>
-  );
-}
+const helps = [
+  {
+    icon: "🔓",
+    title: "Giải mã kịch bản vô thức",
+    desc: 'Nhìn thấu cơ chế vì sao nỗi sợ "vô giá trị" lại đang âm thầm điều khiển bạn tự hạ thấp tiêu chuẩn để chuốc lấy tổn thương.',
+  },
+  {
+    icon: "🛡️",
+    title: "Thu hồi quyền lực cá nhân",
+    desc: "Ngừng phản ứng dựa trên vết thương cũ, cắt đứt sự phụ thuộc cảm xúc để trở thành bến đỗ vững chãi và an toàn nhất cho chính mình.",
+  },
+  {
+    icon: "🦋",
+    title: "Tái lập mối quan hệ bên trong",
+    desc: "Đưa tiềm thức về trạng thái an toàn nguyên bản, để bạn không bao giờ còn sống với nhu cầu phải cầu xin sự công nhận từ bất kỳ ai khác.",
+  },
+];
 
-/* ── Custom gold heart icon ── */
-function HeartIcon({ className = "" }: { className?: string }) {
-  return (
-    <svg viewBox="0 0 48 48" className={className} fill="none">
-      <path
-        d="M24 38C24 38 8 28.5 8 17.5C8 11.5 12.5 8 17 8C20.5 8 23 10.5 24 13C25 10.5 27.5 8 31 8C35.5 8 40 11.5 40 17.5C40 28.5 24 38 24 38Z"
-        stroke="currentColor"
-        strokeWidth="2.25"
-        strokeLinejoin="round"
-      />
-    </svg>
-  );
-}
+const trust = ["Học online", "Bắt đầu ngay", "Cộng đồng riêng", "Truy cập trọn đời", "Hoàn tiền 7 ngày"];
 
-/* ── Custom gold shield + sword icon ── */
-function ShieldSwordIcon({ className = "" }: { className?: string }) {
-  return (
-    <svg viewBox="0 0 48 48" className={className} fill="none">
-      <path
-        d="M24 7L36 11.5V21C36 29.5 30.5 35.5 24 38C17.5 35.5 12 29.5 12 21V11.5L24 7Z"
-        stroke="currentColor"
-        strokeWidth="2.1"
-        strokeLinejoin="round"
-      />
-      <line x1="24" y1="14" x2="24" y2="31" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
-      <line x1="18.5" y1="19.5" x2="29.5" y2="19.5" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
-    </svg>
-  );
-}
-
-/* ── Custom gold star-burst (compass star) icon ── */
-function CompassStarIcon({ className = "" }: { className?: string }) {
-  return (
-    <svg viewBox="0 0 48 48" className={className} fill="none">
-      <path
-        d="M24 6L27.5 20.5L42 24L27.5 27.5L24 42L20.5 27.5L6 24L20.5 20.5L24 6Z"
-        stroke="currentColor"
-        strokeWidth="2"
-        strokeLinejoin="round"
-      />
-      <circle cx="24" cy="24" r="3.2" stroke="currentColor" strokeWidth="1.75" />
-    </svg>
-  );
-}
-
-const icons = [SunburstIcon, HeartIcon, ShieldSwordIcon, CompassStarIcon];
-
-/* ── Decorative twisting vine connecting two stations (desktop only) ── */
-function GoldVine({ flip = false }: { flip?: boolean }) {
-  return (
-    <svg
-      viewBox="0 0 80 200"
-      className={`absolute top-1/2 -translate-y-1/2 w-10 h-[180px] text-[#C9A84C]/70 ${flip ? "scale-x-[-1]" : ""}`}
-      style={{ left: "50%", transform: `translateX(-50%) ${flip ? "scaleX(-1)" : ""}` }}
-      fill="none"
-    >
-      <path
-        d="M40 0 C10 30, 70 60, 40 90 C10 120, 70 150, 40 200"
-        stroke="currentColor"
-        strokeWidth="3"
-        strokeLinecap="round"
-      />
-    </svg>
-  );
-}
-
-function StepCard({ step }: { step: (typeof steps)[number] }) {
-  return (
-    <div className="w-full bg-white/[0.04] backdrop-blur-sm border border-[#C9A84C]/40 rounded-2xl shadow-[0_8px_30px_rgba(0,0,0,0.25)] p-5 md:p-6 text-center">
-      <span className="inline-block bg-[#C9A84C]/15 border border-[#C9A84C]/50 text-[#F5D78E] font-bold text-[11px] md:text-xs tracking-wider px-3 py-1 rounded-full mb-3">
-        {step.label}
-      </span>
-      <h3 className="font-serif font-extrabold text-[#F5D78E] text-lg md:text-xl mb-2 leading-snug">{step.title}</h3>
-      <p className="text-gray-300 text-sm md:text-base leading-relaxed">{step.desc}</p>
-    </div>
-  );
-}
-
-function StationIcon({ IconComp }: { IconComp: typeof SunburstIcon }) {
-  return (
-    <div className="relative z-10 w-12 h-12 md:w-14 md:h-14 rounded-full bg-[#1c0c38] border-2 border-[#C9A84C] ring-4 ring-[#C9A84C]/20 flex items-center justify-center flex-shrink-0 shadow-[0_0_25px_rgba(201,168,76,0.45)]">
-      <IconComp className="w-6 h-6 md:w-7 md:h-7 text-[#F5D78E]" />
-    </div>
-  );
-}
-
-export function SolutionSection() {
+export function InstructorSection() {
   const scrollToPricing = () =>
     document.getElementById("pricing")?.scrollIntoView({ behavior: "smooth" });
 
   return (
-    <section id="solution" className="py-24 bg-[#140728] relative overflow-hidden">
-      <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[700px] h-[400px] rounded-full bg-violet-900/25 blur-[110px]" />
-        <div className="absolute bottom-0 right-0 w-[450px] h-[400px] rounded-full bg-[#C9A84C]/8 blur-[100px]" />
-        {/* faint smoke wisps like the mockup */}
-        <div className="absolute bottom-0 left-0 w-[300px] h-[260px] bg-[#7c4dff]/10 blur-[60px] rounded-full" />
-        <div className="absolute bottom-0 right-[10%] w-[260px] h-[220px] bg-[#7c4dff]/10 blur-[60px] rounded-full" />
-      </div>
-
-      <div className="container mx-auto px-4 lg:px-8 max-w-6xl relative z-10">
+    <section className="py-24 bg-white relative overflow-hidden">
+      <div className="container mx-auto px-4 lg:px-8 max-w-3xl relative z-10">
+        {/* Title */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-center mb-16"
+          className="text-center mb-10"
         >
-          <h2 className="font-serif font-extrabold text-3xl md:text-5xl lg:text-6xl text-[#F5D78E] leading-tight tracking-wide">
-            LỘ TRÌNH 4 GIAI ĐOẠN CHUYỂN HÓA
+          <h2 className="font-serif font-bold text-3xl md:text-5xl text-gray-900 tracking-wide">
+            Chào bạn, mình là Nga Alchemist
           </h2>
+          <p className="mt-3 text-violet-700 text-base md:text-lg">
+            Người bẻ gãy mô thức &amp; chữa lành cảm xúc từ gốc
+          </p>
         </motion.div>
 
-        {/* ── DESKTOP horizontal timeline (alternating above / below) ── */}
-        <div className="hidden md:grid grid-cols-4 relative mb-6">
-          {/* main gold bar connecting all 4 nodes */}
-          <div className="absolute left-[12.5%] right-[12.5%] top-1/2 -translate-y-1/2 h-[4px] bg-gradient-to-r from-[#C9A84C]/40 via-[#E8C96A] to-[#C9A84C]/40 rounded-full shadow-[0_0_10px_rgba(201,168,76,0.5)]" />
+        {/* Photo */}
+        <motion.div
+          initial={{ opacity: 0, scale: 0.98 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          viewport={{ once: true }}
+          className="relative rounded-3xl overflow-hidden shadow-xl border border-violet-100 mb-6 max-w-md mx-auto"
+        >
+          <img src={instructorImg} alt="Nga Alchemist" className="w-full object-cover" />
+        </motion.div>
 
-          {steps.map((step, i) => {
-            const above = i % 2 === 1;
-            const IconComp = icons[i];
-            return (
-              <motion.div
-                key={i}
-                initial={{ opacity: 0, y: above ? -25 : 25 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.12 }}
-                className="relative flex flex-col items-center h-[440px] px-3"
-              >
-                {/* decorative vine between this node and the next */}
-                {i < steps.length - 1 && <GoldVine flip={above} />}
-
-                <div className="flex-1 flex items-end pb-5 w-full">
-                  {above && <StepCard step={step} />}
-                </div>
-
-                <StationIcon IconComp={IconComp} />
-
-                <div className="flex-1 flex items-start pt-5 w-full">
-                  {!above && <StepCard step={step} />}
-                </div>
-              </motion.div>
-            );
-          })}
+        {/* Methods */}
+        <div className="flex flex-wrap justify-center gap-2 mb-10">
+          {methods.map((m, i) => (
+            <span key={i} className="px-3.5 py-1.5 rounded-full text-sm border border-violet-200 text-violet-700 bg-violet-50">
+              {m}
+            </span>
+          ))}
         </div>
 
-        {/* ── MOBILE vertical stack ── */}
-        <div className="md:hidden space-y-5 mb-6 relative pl-7">
-          <div className="absolute left-[15px] top-2 bottom-2 w-[3px] bg-gradient-to-b from-[#C9A84C]/30 via-[#E8C96A] to-[#C9A84C]/30 rounded-full" />
-          {steps.map((step, i) => {
-            const IconComp = icons[i];
-            return (
-              <motion.div
-                key={i}
-                initial={{ opacity: 0, x: 20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.08 }}
-                className="relative"
-              >
-                <div className="absolute -left-[29px] top-4 w-8 h-8 rounded-full bg-[#1c0c38] border-2 border-[#C9A84C] ring-2 ring-[#C9A84C]/25 flex items-center justify-center shadow-[0_0_15px_rgba(201,168,76,0.4)]">
-                  <IconComp className="w-4 h-4 text-[#F5D78E]" />
+        {/* Story */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="space-y-5 text-gray-700 leading-[1.9] text-lg md:text-xl"
+        >
+          {storyBefore.map((p, i) => (
+            <p key={i}>{p}</p>
+          ))}
+
+          <div className="bg-gray-900 rounded-2xl px-7 py-6 my-7">
+            <p className="text-white font-semibold text-xl md:text-2xl leading-relaxed text-center">
+              Sau nhiều thất bại và những lời thóa mạ hạ bệ lòng tự trọng, mình đã thực sự tin: Bản thân mình là kẻ không có giá trị.
+            </p>
+          </div>
+
+          {storyAfter.map((p, i) => (
+            <p key={i} className="whitespace-pre-line">{p}</p>
+          ))}
+        </motion.div>
+
+        {/* VÌ MÌNH ĐÃ ĐI QUA box (contrasting dark bg) */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="mt-10 rounded-2xl p-7 md:p-9 bg-gradient-to-br from-[#1a0a2e] to-[#140728] border border-[#C9A84C]/30 shadow-xl"
+        >
+          <h3 className="font-serif font-bold text-[#F5D78E] text-xl md:text-2xl mb-5 tracking-wide">
+            VÌ MÌNH ĐÃ ĐI QUA, NÊN MÌNH HIỂU...
+          </h3>
+          <ul className="space-y-6">
+            {proof.map((p, i) => (
+              <li key={i} className="flex items-start gap-4">
+                <span className="mt-2 w-2.5 h-2.5 rounded-full bg-[#C9A84C] flex-shrink-0" />
+                <div>
+                  <p className="text-[#F5D78E] font-semibold text-lg md:text-xl mb-1.5">{p.lead}</p>
+                  <p className="text-gray-100 leading-[1.9] text-lg md:text-xl">{p.body}</p>
                 </div>
-                <StepCard step={step} />
-              </motion.div>
-            );
-          })}
+              </li>
+            ))}
+          </ul>
+        </motion.div>
+
+        {/* Transition + 3 helps */}
+        <motion.p
+          initial={{ opacity: 0, y: 15 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="mt-10 text-gray-700 leading-[1.9] text-lg md:text-xl whitespace-pre-line"
+        >
+          {"Hành trình 7 ngày này không có những triết lý cao siêu đao to búa lớn. Nó là tất cả những đúc kết tinh gọn, an toàn và sâu sắc nhất từ chính hành trình chuyển hóa xương máu của mình, cùng những trải nghiệm đồng hành thực tế cùng hàng trăm khách hàng.\nMình ở đây để giúp bạn rút ngắn con đường, không còn phải mò mẫm trong bóng tối:"}
+        </motion.p>
+
+        <div className="grid md:grid-cols-3 gap-5 mt-8">
+          {helps.map((h, i) => (
+            <motion.div
+              key={i}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: i * 0.1 }}
+              className="bg-white border border-violet-100 rounded-2xl p-6 shadow-sm hover:shadow-md hover:-translate-y-1 transition-all"
+            >
+              <div className="text-4xl mb-3">{h.icon}</div>
+              <h4 className="font-serif font-bold text-violet-900 text-lg md:text-xl mb-2">{h.title}</h4>
+              <p className="text-base md:text-lg text-gray-600 leading-relaxed">{h.desc}</p>
+            </motion.div>
+          ))}
         </div>
 
+        {/* CTA */}
         <motion.div
           initial={{ opacity: 0, y: 15 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-center mt-12"
+          className="mt-10 text-center"
         >
+          <p className="text-gray-700 text-lg md:text-xl leading-relaxed max-w-2xl mx-auto mb-8">
+            Hành trình này đang ở đây đợi bạn — nếu bạn đã sẵn sàng ngừng nỗ lực để được yêu, và bắt đầu trở thành{" "}
+            <span className="text-violet-800 font-semibold whitespace-nowrap">người không thể bị bỏ rơi.</span>
+          </p>
           <button
             onClick={scrollToPricing}
-            data-testid="button-cta-solution"
+            data-testid="button-cta-guide"
             className="group inline-flex items-center justify-center gap-3 px-8 py-4 md:py-5 rounded-none font-bold text-base md:text-lg text-[#140728] bg-[#C9A84C] hover:bg-[#E8C96A] transition-all shadow-[0_8px_30px_rgba(201,168,76,0.35)] hover:shadow-[0_14px_44px_rgba(201,168,76,0.6)] mx-auto"
           >
-            <span className="tracking-wide whitespace-nowrap">TÔI MUỐN BẮT ĐẦU HÀNH TRÌNH NÀY</span>
+            <span className="tracking-wide whitespace-nowrap">TÔI CHỌN NGỪNG TỰ BỎ RƠI CHÍNH MÌNH</span>
             <ChevronRight className="w-6 h-6 group-hover:translate-x-1 transition-transform flex-shrink-0" />
           </button>
-          <TrustBar dark />
+          <div className="flex flex-nowrap justify-center items-center gap-x-3 mt-4 text-xs md:text-sm text-gray-500 overflow-x-auto">
+            {trust.map((t, i) => (
+              <span key={i} className="flex items-center gap-2 whitespace-nowrap flex-shrink-0">
+                {i > 0 && <span className="text-[#C9A84C]/60">•</span>}
+                {t}
+              </span>
+            ))}
+          </div>
         </motion.div>
       </div>
     </section>
