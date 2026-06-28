@@ -42,7 +42,7 @@ export function HeroSection() {
 
         {/* ── LEFT TEXT COLUMN (~60%) ── */}
         <div className="relative z-10 w-full px-5 sm:px-8 md:pl-[10%] lg:pl-[16%] lg:pr-0">
-          <div className="w-fit max-w-full py-10 lg:py-14 text-left">
+          <div className="w-full md:w-1/2 lg:w-[48%] py-10 lg:py-14 text-left">
             {/* Brand eyebrow */}
             <motion.p
               initial={{ opacity: 0, y: 10 }}
@@ -63,25 +63,25 @@ export function HeroSection() {
               style={{
                 fontFamily: "'Playfair Display SC', serif",
                 fontWeight: 700,
-                fontSize: "clamp(1.6rem, 6.2vw, 4.7rem)",
+                fontSize: "clamp(1.4rem, 4.6vw, 3.2rem)",
                 letterSpacing: "-0.015em",
-                lineHeight: 1.04,
+                lineHeight: 1.08,
                 WebkitTextStroke: "1px #1a0a3a",
                 textShadow: "3px 3px 0 #1a0a3a, 6px 6px 16px rgba(0,0,0,0.6)",
               }}
             >
-              7 NGÀY THOÁT KHỎI<br />NỖI SỢ BỊ BỎ RƠI
+              7 NGÀY THOÁT KHỎI NỖI SỢ BỊ BỎ RƠI
             </motion.h1>
 
             {/* Sub-headline — smaller than the main headline now */}
-            <div className="leading-[1.15] mb-8 lg:mb-12">
+            <div className="leading-[1.2] mb-8 lg:mb-12">
               <motion.span
                 initial={{ opacity: 0, y: 24 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.35 }}
-                className="block font-serif font-bold text-[#F6ECCF] whitespace-nowrap"
+                className="block font-serif font-bold text-[#F6ECCF]"
                 style={{
-                  fontSize: "clamp(0.95rem, 2.9vw, 1.7rem)",
+                  fontSize: "clamp(0.9rem, 2.4vw, 1.4rem)",
                   textShadow: "2px 2px 0 #1a0a3a, 4px 4px 12px rgba(0,0,0,0.55)",
                 }}
               >
@@ -91,9 +91,9 @@ export function HeroSection() {
                 initial={{ opacity: 0, y: 24 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.5 }}
-                className="block font-serif font-bold text-[#F6ECCF] mt-1 whitespace-nowrap"
+                className="block font-serif font-bold text-[#F6ECCF] mt-1"
                 style={{
-                  fontSize: "clamp(0.9rem, 2.7vw, 1.6rem)",
+                  fontSize: "clamp(0.85rem, 2.2vw, 1.3rem)",
                   textShadow: "2px 2px 0 #1a0a3a, 4px 4px 12px rgba(0,0,0,0.55)",
                 }}
               >
@@ -103,13 +103,13 @@ export function HeroSection() {
                 initial={{ opacity: 0, scale: 0.96 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.8, delay: 0.65 }}
-                className="block uppercase whitespace-nowrap mt-2 text-[#E8C96A]"
+                className="block uppercase mt-2 text-[#E8C96A]"
                 style={{
                   fontFamily: "'Playfair Display SC', serif",
                   fontWeight: 700,
-                  fontSize: "clamp(1.05rem, 3.4vw, 2.1rem)",
+                  fontSize: "clamp(1rem, 2.8vw, 1.7rem)",
                   letterSpacing: "-0.01em",
-                  lineHeight: 1.06,
+                  lineHeight: 1.1,
                   WebkitTextStroke: "0.6px #1a0a3a",
                   textShadow: "2px 2px 0 #1a0a3a, 4px 4px 12px rgba(0,0,0,0.55)",
                 }}
@@ -123,7 +123,7 @@ export function HeroSection() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.6 }}
               className="text-xs md:text-sm text-gray-100 leading-relaxed mb-5"
-              style={{ textShadow: "0 1px 8px rgba(20,7,40,0.95), 0 0 20px rgba(20,7,40,0.85)" }}
+              style={{ textShadow: "0 1px 8px rgba(20,7,40,0.95), 0 0 20px rgba(20,7,40,0.85)", minWidth: 0 }}
             >
               Nếu bạn luôn cố gắng trở thành người{" "}
               <span className="text-[#FFE066] font-semibold">"hiểu chuyện, nhẫn nhịn và hy sinh"</span> để được yêu thương, đây là hành trình 7 ngày giúp bạn nhận diện gốc rễ của nỗi sợ ấy, xây dựng lại cảm giác an toàn từ bên trong và tìm lại giá trị thật của chính mình.
@@ -158,7 +158,7 @@ export function HeroSection() {
               <ChevronRight className="w-6 h-6 group-hover:translate-x-1 transition-transform flex-shrink-0" />
             </button>
 
-            <div className="flex flex-nowrap items-center gap-x-3 lg:gap-x-4 mt-6 text-xs md:text-sm text-gray-200 overflow-x-auto pb-1">
+            <div className="flex flex-wrap items-center gap-x-3 lg:gap-x-4 gap-y-2 mt-6 text-xs md:text-sm text-gray-200">
               {trust.map((t, i) => (
                 <div key={i} className="flex items-center gap-1.5 whitespace-nowrap flex-shrink-0">
                   <t.icon className="w-3.5 h-3.5 text-[#C9A84C] flex-shrink-0" />
