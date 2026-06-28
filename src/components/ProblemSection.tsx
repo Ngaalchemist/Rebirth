@@ -128,10 +128,10 @@ export function ProblemSection() {
             className="w-full lg:w-1/2 py-14"
           >
             <h3 className="font-serif font-bold text-2xl md:text-3xl lg:text-[2.1rem] text-white leading-[1.35] mb-6">
-              Khoảnh khắc bạn hạ thấp tiêu chuẩn để níu giữ một người, chấp nhận sự hờ hững trong khi biết rõ mình xứng đáng nhiều hơn, cố hiểu chuyện hơn, cho đi nhiều hơn, chịu đựng nhiều hơn... -{" "}
+              Khoảnh khắc bạn hạ thấp tiêu chuẩn, cố hiểu chuyện hơn để níu giữ một người không xứng đáng với bạn -{" "}
               <span className="text-[#F5D78E]">chính là lúc bạn đang TỰ BỎ RƠI CHÍNH MÌNH.</span>
             </h3>
-            <p className="text-gray-200 text-lg md:text-xl leading-relaxed">
+            <p className="text-gray-200 text-base md:text-lg leading-relaxed">
               Nếu sự nhẫn nhịn và hy sinh có thể đổi lấy tình yêu chân thành, đáng lẽ bạn đã là người hạnh phúc nhất từ lâu rồi.
             </p>
           </motion.div>
