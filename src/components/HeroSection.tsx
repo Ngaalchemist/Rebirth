@@ -42,7 +42,7 @@ export function HeroSection() {
 
         {/* ── LEFT TEXT COLUMN (~60%) ── */}
         <div className="relative z-10 w-full px-5 sm:px-8 md:pl-[10%] lg:pl-[16%] lg:pr-0">
-          <div className="w-full md:w-1/2 lg:w-[48%] py-10 lg:py-14 text-left">
+          <div className="w-full md:w-[60%] lg:w-[60%] py-10 lg:py-14 text-left">
             {/* Brand eyebrow */}
             <motion.p
               initial={{ opacity: 0, y: 10 }}
