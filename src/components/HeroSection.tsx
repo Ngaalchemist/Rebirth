@@ -122,14 +122,14 @@ export function HeroSection() {
               initial={{ opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.6 }}
-              className="text-xs md:text-sm text-gray-100 leading-relaxed mb-5 max-w-xl"
+              className="text-xs md:text-sm text-gray-100 leading-relaxed mb-5"
               style={{ textShadow: "0 1px 8px rgba(20,7,40,0.95), 0 0 20px rgba(20,7,40,0.85)" }}
             >
               Nếu bạn luôn cố gắng trở thành người{" "}
-              <span className="text-[#FFE066] font-semibold">"hiểu chuyện, nhẫn nhịn và hy sinh"</span> để được yêu thương, đây là hành trình 7 ngày giúp bạn nhận diện gốc rễ của nỗi sợ đó, xây dựng lại cảm giác an toàn từ bên trong và tìm lại giá trị thật của chính mình.
+              <span className="text-[#FFE066] font-semibold">"hiểu chuyện, nhẫn nhịn và hy sinh"</span> để được yêu thương, đây là hành trình 7 ngày giúp bạn nhận diện gốc rễ của nỗi sợ ấy, xây dựng lại cảm giác an toàn từ bên trong và tìm lại giá trị thật của chính mình.
             </motion.p>
 
-            <ul className="space-y-2 mb-6 max-w-xl">
+            <ul className="space-y-2 mb-6">
               {checkmarks.map((c, i) => (
                 <motion.li
                   key={i}
@@ -149,7 +149,7 @@ export function HeroSection() {
               type="button"
               onClick={scrollToPricing}
               data-testid="button-cta-hero"
-              className="group inline-flex items-center justify-center gap-3 px-7 md:px-9 py-4 md:py-5 rounded-none font-bold text-base md:text-lg text-[#140728] transition-all duration-200 shadow-[0_8px_30px_rgba(201,168,76,0.45)] hover:shadow-[0_16px_50px_rgba(255,224,102,0.75)] hover:-translate-y-1 hover:scale-[1.02] active:scale-[0.99] border border-[#FFE066]/50"
+              className="group flex w-full items-center justify-center gap-3 px-7 md:px-9 py-4 md:py-5 rounded-none font-bold text-base md:text-lg text-[#140728] transition-all duration-200 shadow-[0_8px_30px_rgba(201,168,76,0.45)] hover:shadow-[0_16px_50px_rgba(255,224,102,0.75)] hover:-translate-y-1 hover:scale-[1.02] active:scale-[0.99] border border-[#FFE066]/50"
               style={{
                 background: "linear-gradient(180deg, #FFE066 0%, #E8C96A 45%, #C9A84C 100%)",
               }}
