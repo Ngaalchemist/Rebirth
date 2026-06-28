@@ -22,15 +22,6 @@ export function HeroSection() {
 
   return (
     <section className="relative bg-[#140728] overflow-hidden">
-      {/* ── EYEBROW bar ── */}
-      <div className="relative z-20 border-b border-[#C9A84C]/15 bg-[#1a0a2e]/60 backdrop-blur-sm">
-        <div className="container mx-auto px-4 py-3">
-          <p className="text-[#C9A84C] text-xs lg:text-sm font-semibold tracking-[0.22em] uppercase text-center">
-            7 NGÀY THOÁT KHỎI VÒNG LẶP BỊ BỎ RƠI &amp; TÌM LẠI GIÁ TRỊ NỘI TÂM
-          </p>
-        </div>
-      </div>
-
       {/* ── FULL-BLEED HERO IMAGE (portrait baked into right side) ── */}
       <div className="relative min-h-[560px] md:min-h-[640px] lg:min-h-[720px] flex items-center">
         <motion.div
