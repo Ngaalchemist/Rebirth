@@ -39,12 +39,12 @@ const steps = [
 
 function StepCard({ step }: { step: (typeof steps)[number] }) {
   return (
-    <div className="w-full bg-white rounded-2xl shadow-[0_10px_35px_rgba(0,0,0,0.35)] p-5 md:p-6 text-center border border-[#C9A84C]/30">
-      <span className="inline-block bg-[#F5E4A8] border border-[#C9A84C] text-[#7A5A12] font-bold text-[11px] md:text-xs tracking-wider px-3 py-1 rounded-full mb-3 whitespace-nowrap">
+    <div className="w-full bg-white rounded-2xl shadow-[0_10px_35px_rgba(0,0,0,0.35)] p-4 md:p-5 text-center border border-[#C9A84C]/30">
+      <span className="inline-block bg-[#F5E4A8] border border-[#C9A84C] text-[#7A5A12] font-bold text-[10px] md:text-[11px] tracking-wider px-3 py-1 rounded-full mb-2.5 whitespace-nowrap">
         {step.label}
       </span>
-      <h3 className="font-serif font-extrabold text-[#3a2a05] text-lg md:text-xl mb-2 leading-snug">{step.title}</h3>
-      <p className="text-gray-700 text-sm md:text-base leading-relaxed">{step.desc}</p>
+      <h3 className="font-serif font-extrabold text-[#3a2a05] text-base md:text-lg mb-1.5 leading-snug">{step.title}</h3>
+      <p className="text-gray-700 text-[13px] md:text-sm leading-relaxed">{step.desc}</p>
     </div>
   );
 }
@@ -56,11 +56,16 @@ function StationIcon({ src }: { src: string }) {
       <img
         src={src}
         alt=""
-        className="relative w-20 h-20 md:w-24 md:h-24 rounded-full object-cover border-2 border-[#E8C96A] shadow-[0_0_30px_rgba(201,168,76,0.55)]"
+        className="relative w-20 h-20 md:w-24 md:h-24 rounded-full object-cover border-2 border-[#E8C96A] shadow-[0_0_30px_rgba(201,168,76,0.55)] block"
       />
     </div>
   );
 }
+
+const TOP_ZONE = 420; // space reserved above the line for "above" cards
+const BOTTOM_ZONE = 420; // space reserved below the line for "below" cards
+const ICON_GAP = 40; // breathing room between card edge and icon
+const BAR_HEIGHT = 14; // thickness of the metallic gold timeline bar
 
 export function SolutionSection() {
   const scrollToPricing = () =>
@@ -80,19 +85,38 @@ export function SolutionSection() {
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-center mb-16"
+          className="text-center mb-20 md:mb-28"
         >
           <h2 className="font-serif font-extrabold text-2xl sm:text-3xl md:text-5xl lg:text-6xl text-[#F5D78E] leading-tight tracking-wide whitespace-nowrap">
             LỘ TRÌNH 4 GIAI ĐOẠN CHUYỂN HÓA
           </h2>
         </motion.div>
 
-        {/* ── DESKTOP: single straight gold line, 4 icons in one row, cards strictly above or below ── */}
-        <div className="hidden md:block relative">
-          {/* the single straight timeline bar */}
-          <div className="absolute left-[6%] right-[6%] top-[260px] h-[5px] bg-gradient-to-r from-[#C9A84C]/40 via-[#E8C96A] to-[#C9A84C]/40 rounded-full shadow-[0_0_14px_rgba(201,168,76,0.55)] z-0" />
+        {/* ── DESKTOP: single straight metallic gold bar spanning full width, 4 icons sitting exactly on it ── */}
+        <div className="hidden md:block relative" style={{ height: TOP_ZONE + BOTTOM_ZONE }}>
+          {/* the thick metallic gold timeline bar — layered highlight/shadow for a 3D rod look */}
+          <div
+            className="absolute left-0 right-0 z-0 rounded-full"
+            style={{
+              top: TOP_ZONE - BAR_HEIGHT / 2,
+              height: BAR_HEIGHT,
+              background:
+                "linear-gradient(to bottom, #fdf0c0 0%, #E8C96A 18%, #C9A84C 45%, #9c7a28 70%, #6e5414 100%)",
+              boxShadow:
+                "0 2px 4px rgba(0,0,0,0.5), 0 0 18px rgba(201,168,76,0.5), inset 0 1px 1px rgba(255,255,255,0.6)",
+            }}
+          />
+          {/* thin bright highlight line along the top edge of the bar for extra shine */}
+          <div
+            className="absolute left-[1%] right-[1%] z-0 rounded-full opacity-70"
+            style={{
+              top: TOP_ZONE - BAR_HEIGHT / 2 + 1,
+              height: 2,
+              background: "linear-gradient(to right, transparent, #fff6da, transparent)",
+            }}
+          />
 
-          <div className="grid grid-cols-4 gap-4">
+          <div className="absolute inset-0 grid grid-cols-4">
             {steps.map((step, i) => (
               <motion.div
                 key={i}
@@ -100,23 +124,26 @@ export function SolutionSection() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.12 }}
-                className="relative flex flex-col items-center"
-                style={{ height: 560 }}
+                className="relative flex flex-col items-center px-3"
               >
-                {/* space above the line */}
-                <div className="flex flex-col justify-end items-center" style={{ height: 260 }}>
+                {/* top zone: card sits at the bottom of this zone, leaving a gap before the line */}
+                <div
+                  className="w-full flex flex-col justify-end"
+                  style={{ height: TOP_ZONE - ICON_GAP }}
+                >
                   {step.cardPos === "above" && <StepCard step={step} />}
                 </div>
 
-                {/* icon sits exactly on the line */}
-                <div style={{ height: 0 }} className="relative flex items-center justify-center w-full">
-                  <div className="absolute -translate-y-1/2">
-                    <StationIcon src={step.icon} />
-                  </div>
+                {/* icon zone: fixed height exactly straddling the line */}
+                <div className="w-full flex items-center justify-center" style={{ height: ICON_GAP * 2 }}>
+                  <StationIcon src={step.icon} />
                 </div>
 
-                {/* space below the line */}
-                <div className="flex flex-col justify-start items-center pt-10" style={{ height: 300 }}>
+                {/* bottom zone: card sits at the top of this zone, right after the gap */}
+                <div
+                  className="w-full flex flex-col justify-start"
+                  style={{ height: BOTTOM_ZONE - ICON_GAP }}
+                >
                   {step.cardPos === "below" && <StepCard step={step} />}
                 </div>
               </motion.div>
@@ -125,8 +152,15 @@ export function SolutionSection() {
         </div>
 
         {/* ── MOBILE vertical stack ── */}
-        <div className="md:hidden space-y-5 mb-6 relative pl-7">
-          <div className="absolute left-[15px] top-2 bottom-2 w-[3px] bg-gradient-to-b from-[#C9A84C]/30 via-[#E8C96A] to-[#C9A84C]/30 rounded-full" />
+        <div className="md:hidden space-y-5 mb-12 relative pl-7">
+          <div
+            className="absolute left-[12px] top-2 bottom-2 w-[8px] rounded-full"
+            style={{
+              background:
+                "linear-gradient(to right, #fdf0c0 0%, #E8C96A 18%, #C9A84C 45%, #9c7a28 70%, #6e5414 100%)",
+              boxShadow: "0 0 12px rgba(201,168,76,0.5), inset 1px 0 1px rgba(255,255,255,0.5)",
+            }}
+          />
           {steps.map((step, i) => (
             <motion.div
               key={i}
@@ -140,7 +174,7 @@ export function SolutionSection() {
                 <img
                   src={step.icon}
                   alt=""
-                  className="w-9 h-9 rounded-full object-cover border-2 border-[#E8C96A] shadow-[0_0_15px_rgba(201,168,76,0.5)]"
+                  className="w-9 h-9 rounded-full object-cover border-2 border-[#E8C96A] shadow-[0_0_15px_rgba(201,168,76,0.5)] block"
                 />
               </div>
               <StepCard step={step} />
@@ -152,7 +186,7 @@ export function SolutionSection() {
           initial={{ opacity: 0, y: 15 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-center mt-12"
+          className="text-center mt-20 md:mt-24"
         >
           <button
             onClick={scrollToPricing}
