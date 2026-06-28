@@ -21,7 +21,7 @@ export function ProblemSection() {
             viewport={{ once: true }}
             className="flex flex-col justify-center px-8 py-16 lg:pl-10 lg:pr-16"
           >
-            <h2 className="font-serif font-bold text-2xl md:text-3xl lg:text-[2.6rem] text-white leading-[1.18]">
+            <h2 className="font-serif font-bold text-xl md:text-2xl lg:text-[2.2rem] text-white leading-[1.18]">
               Tại sao bạn đã rất cố gắng, đã rất{" "}
               <span className="text-[#E8C96A]">"hiểu chuyện"</span>, nhưng vẫn luôn là người…{" "}
               <span className="text-[#E8C96A]">bị bỏ lại?</span>
@@ -37,7 +37,7 @@ export function ProblemSection() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-center text-lg md:text-xl text-gray-700 leading-relaxed max-w-3xl mx-auto mb-14"
+            className="text-center text-base md:text-lg text-gray-700 leading-relaxed max-w-3xl mx-auto mb-14"
           >
             Bạn không phải người duy nhất. Hầu hết những phụ nữ đang kẹt trong vòng lặp này đều đang phải chịu đựng{" "}
             <span className="font-bold text-violet-800">hai tầng bi kịch âm thầm</span> mà ít ai dám gọi thẳng tên:
@@ -53,14 +53,14 @@ export function ProblemSection() {
             >
               <div className="flex items-center gap-3 mb-4">
                 <span className="text-2xl">⚡</span>
-                <h3 className="font-serif font-bold text-xl md:text-2xl text-violet-900">
+                <h3 className="font-serif font-bold text-lg md:text-xl text-violet-900">
                   Tầng thứ nhất — Cơn bão bất lực bên trong
                 </h3>
               </div>
-              <p className="text-gray-700 text-lg md:text-xl leading-[1.85] mb-4">
+              <p className="text-gray-700 text-base md:text-lg leading-[1.85] mb-4">
                 Khi mối quan hệ rạn nứt, bạn rơi vào những đêm mất ngủ triền miên. Bạn lục tung mọi thứ trên mạng chỉ để tìm một câu trả lời: <span className="italic">"Vì sao?"</span>. Nhiều đêm bạn khóc nghẹn đến 3 giờ sáng vì bất lực. Bạn tự trách mình, dằn vặt về quá khứ, cố làm mọi thứ để chứng minh mình có giá trị với một hy vọng duy nhất: <span className="font-medium text-gray-900">Để người ta chọn mình.</span>
               </p>
-              <p className="text-gray-700 text-lg md:text-xl leading-[1.85]">
+              <p className="text-gray-700 text-base md:text-lg leading-[1.85]">
                 Lâu dần, bạn kiệt quệ. Bạn bắt đầu tin vào cái nhãn mình tự gán cho bản thân: <span className="font-semibold text-violet-900">"Có lẽ mình thực sự không xứng đáng."</span>
               </p>
             </motion.div>
@@ -74,11 +74,11 @@ export function ProblemSection() {
             >
               <div className="flex items-center gap-3 mb-4">
                 <span className="text-2xl">⚡</span>
-                <h3 className="font-serif font-bold text-2xl md:text-3xl text-violet-900">
+                <h3 className="font-serif font-bold text-xl md:text-2xl text-violet-900">
                   Tầng thứ hai — Kịch bản vòng lặp bên ngoài
                 </h3>
               </div>
-              <p className="text-gray-700 text-lg md:text-xl leading-[1.85]">
+              <p className="text-gray-700 text-base md:text-lg leading-[1.85]">
                 Bạn bàng hoàng nhận ra những đổ vỡ trong đời mình không phải là ngẫu nhiên. Nhìn lại các mối quan hệ đã qua, bạn giật mình thấy chúng lặp lại y hệt một kịch bản cũ: Bạn càng hạ thấp tiêu chuẩn, họ càng khinh rẻ. Bạn càng hy sinh, họ càng xem đó là điều hiển nhiên và bỏ lại bạn như một món đồ hết giá trị sử dụng.
               </p>
             </motion.div>
