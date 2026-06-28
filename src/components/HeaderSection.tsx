@@ -7,7 +7,7 @@ export function HeaderSection() {
       <div className="container mx-auto px-4 lg:px-8">
         <div className="flex items-center justify-between h-16 gap-4">
           <p className="font-serif font-bold text-gray-900 text-[13px] sm:text-base md:text-lg tracking-wide leading-tight">
-            7 NGÀY THOÁT KHỎI VÒNG LẶP BỊ BỎ RƠI
+            7 NGÀY THOÁT KHỎI VÒNG LẶP BỊ BỎ RƠI & TÌM LẠI GIÁ TRỊ BẢN THÂN
           </p>
 
           <button
