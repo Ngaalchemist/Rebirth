@@ -70,7 +70,7 @@ export function HeroSection() {
                 textShadow: "3px 3px 0 #1a0a3a, 6px 6px 16px rgba(0,0,0,0.6)",
               }}
             >
-              7 NGÀY THOÁT KHỎI NỖI SỢ BỊ BỎ RƠI
+              7 NGÀY THOÁT KHỎI<br />NỖI SỢ BỊ BỎ RƠI
             </motion.h1>
 
             {/* Sub-headline — smaller than the main headline now */}
@@ -81,7 +81,7 @@ export function HeroSection() {
                 transition={{ duration: 0.8, delay: 0.35 }}
                 className="block font-serif font-bold text-[#F6ECCF]"
                 style={{
-                  fontSize: "clamp(0.9rem, 2.4vw, 1.4rem)",
+                  fontSize: "clamp(1.05rem, 2.9vw, 1.6rem)",
                   textShadow: "2px 2px 0 #1a0a3a, 4px 4px 12px rgba(0,0,0,0.55)",
                 }}
               >
@@ -93,7 +93,7 @@ export function HeroSection() {
                 transition={{ duration: 0.8, delay: 0.5 }}
                 className="block font-serif font-bold text-[#F6ECCF] mt-1"
                 style={{
-                  fontSize: "clamp(0.85rem, 2.2vw, 1.3rem)",
+                  fontSize: "clamp(1rem, 2.7vw, 1.5rem)",
                   textShadow: "2px 2px 0 #1a0a3a, 4px 4px 12px rgba(0,0,0,0.55)",
                 }}
               >
@@ -107,7 +107,7 @@ export function HeroSection() {
                 style={{
                   fontFamily: "'Playfair Display SC', serif",
                   fontWeight: 700,
-                  fontSize: "clamp(1rem, 2.8vw, 1.7rem)",
+                  fontSize: "clamp(1.15rem, 3.3vw, 1.95rem)",
                   letterSpacing: "-0.01em",
                   lineHeight: 1.1,
                   WebkitTextStroke: "0.6px #1a0a3a",
