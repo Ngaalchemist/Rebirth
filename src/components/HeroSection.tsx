@@ -43,6 +43,17 @@ export function HeroSection() {
         {/* ── LEFT TEXT COLUMN (~60%) ── */}
         <div className="relative z-10 w-full px-5 sm:px-8 md:pl-[10%] lg:pl-[16%] lg:pr-0">
           <div className="w-full md:w-[76%] lg:w-[66%] py-10 lg:py-14 text-left">
+            {/* Brand eyebrow */}
+            <motion.p
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.7 }}
+              className="text-[#C9A84C] text-xs lg:text-sm font-semibold tracking-[0.28em] uppercase mb-3"
+              style={{ textShadow: "0 1px 6px rgba(20,7,40,0.9)" }}
+            >
+              Rebirth
+            </motion.p>
+
             {/* Main headline — biggest, using the same emphasis treatment the old "KHÔNG THỂ BỊ BỎ RƠI" had */}
             <motion.h1
               initial={{ opacity: 0, scale: 0.94 }}
@@ -115,7 +126,7 @@ export function HeroSection() {
               style={{ textShadow: "0 1px 8px rgba(20,7,40,0.95), 0 0 20px rgba(20,7,40,0.85)" }}
             >
               Nếu bạn luôn cố gắng trở thành người{" "}
-              <span className="text-[#FFE066] font-semibold">"hiểu chuyện, nhẫn nhịn và hy sinh"</span> để được yêu thương, đây là hành trình 7 ngày giúp bạn nhận diện gốc rễ của nỗi sợ bị bỏ rơi và xây dựng lại cảm giác an toàn từ bên trong.
+              <span className="text-[#FFE066] font-semibold">"hiểu chuyện, nhẫn nhịn và hy sinh"</span> để được yêu thương, đây là hành trình 7 ngày giúp bạn nhận diện gốc rễ của nỗi sợ đó, xây dựng lại cảm giác an toàn từ bên trong và tìm lại giá trị thật của chính mình.
             </motion.p>
 
             <ul className="space-y-2 mb-6 max-w-xl">
