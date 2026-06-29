@@ -3,7 +3,7 @@ import { ChevronRight, Monitor, Play, Users, Infinity as InfinityIcon, Clock } f
 import heroBg from "@/assets/images/hero-final.png";
 
 const checkmarks = [
-  { gold: "Ngừng kiệt sức", rest: " vì phải nỗ lực để được ở lại." },
+  { gold: "Lấy lại năng lượng đã mất", rest: " vì cố gắng để được ở lại." },
   { gold: "Chấm dứt sự nhục nhã", rest: " khi phải cầu xin sự chú ý từ người khác." },
   { gold: "Xây dựng cảm giác đủ đầy", rest: " và vững vàng từ bên trong." },
 ];
@@ -102,7 +102,7 @@ export function HeroSection() {
               initial={{ opacity: 0, y: 24 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.55 }}
-              className="font-serif font-bold text-[#F6ECCF] leading-[1.3] mb-6 max-w-xl text-base md:text-lg"
+              className="font-serif font-bold text-[#F6ECCF] leading-[1.3] mb-6 max-w-xl text-lg md:text-xl"
               style={{
                 textShadow: "2px 2px 0 #1a0a3a, 4px 4px 12px rgba(0,0,0,0.55)",
               }}
