@@ -102,10 +102,9 @@ export function HeroSection() {
               initial={{ opacity: 0, y: 24 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.55 }}
-              className="font-serif font-bold text-[#F6ECCF] leading-[1.15] mb-6 max-w-2xl"
+              className="font-serif font-bold text-[#F6ECCF] leading-[1.3] mb-6 max-w-xl text-base md:text-lg"
               style={{
-                fontSize: "clamp(3rem, 6.9vw, 3.75rem)",
-                textShadow: "3px 3px 0 #1a0a3a, 6px 6px 18px rgba(0,0,0,0.6)",
+                textShadow: "2px 2px 0 #1a0a3a, 4px 4px 12px rgba(0,0,0,0.55)",
               }}
             >
               Hành trình 7 ngày nhận diện gốc rễ nỗi sợ bị bỏ rơi, xây lại giá trị thật của chính mình.
