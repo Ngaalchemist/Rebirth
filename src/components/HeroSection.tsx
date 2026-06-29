@@ -60,45 +60,9 @@ export function HeroSection() {
                 initial={{ opacity: 0, y: 24 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.15 }}
-                className="block text-[#E8C96A] whitespace-nowrap"
-                style={{
-                  fontFamily: "'Playfair Display SC', serif",
-                  fontWeight: 700,
-                  fontSize: "clamp(1.3rem, 4.7vw, 3.9rem)",
-                  letterSpacing: "-0.01em",
-                  WebkitTextStroke: "1px #1a0a3a",
-                  textShadow: "3px 3px 0 #1a0a3a, 6px 6px 16px rgba(0,0,0,0.6)",
-                }}
-              >
-                7 NGÀY THOÁT KHỎI
-              </motion.span>
-              <motion.span
-                initial={{ opacity: 0, y: 24 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 0.3 }}
-                className="block text-[#E8C96A] mt-1 whitespace-nowrap"
-                style={{
-                  fontFamily: "'Playfair Display SC', serif",
-                  fontWeight: 700,
-                  fontSize: "clamp(1.15rem, 4.4vw, 3.6rem)",
-                  letterSpacing: "-0.01em",
-                  WebkitTextStroke: "1px #1a0a3a",
-                  textShadow: "3px 3px 0 #1a0a3a, 6px 6px 16px rgba(0,0,0,0.6)",
-                }}
-              >
-                NỖI SỢ BỊ BỎ RƠI
-              </motion.span>
-            </h1>
-
-            {/* Sub-headline */}
-            <div className="leading-[1.2] mb-6">
-              <motion.span
-                initial={{ opacity: 0, y: 24 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 0.45 }}
                 className="block font-serif font-bold text-[#F6ECCF]"
                 style={{
-                  fontSize: "clamp(1.05rem, 2.9vw, 1.6rem)",
+                  fontSize: "clamp(1.4rem, 3.4vw, 2.5rem)",
                   textShadow: "2px 2px 0 #1a0a3a, 4px 4px 12px rgba(0,0,0,0.55)",
                 }}
               >
@@ -107,26 +71,43 @@ export function HeroSection() {
               <motion.span
                 initial={{ opacity: 0, y: 24 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 0.55 }}
-                className="block font-serif font-bold text-[#F6ECCF] mt-1"
-                style={{
-                  fontSize: "clamp(1rem, 2.7vw, 1.5rem)",
-                  textShadow: "2px 2px 0 #1a0a3a, 4px 4px 12px rgba(0,0,0,0.55)",
-                }}
+                transition={{ duration: 0.8, delay: 0.3 }}
+                className="block mt-1"
+                style={{ fontSize: "clamp(1.35rem, 3.2vw, 2.4rem)" }}
               >
-                Hãy bắt đầu trở thành người{" "}
+                <span
+                  className="font-serif font-bold text-[#F6ECCF]"
+                  style={{ textShadow: "2px 2px 0 #1a0a3a, 4px 4px 12px rgba(0,0,0,0.55)" }}
+                >
+                  Hãy trở thành người{" "}
+                </span>
                 <span
                   className="uppercase text-[#E8C96A]"
                   style={{
                     fontFamily: "'Playfair Display SC', serif",
                     fontWeight: 700,
                     WebkitTextStroke: "0.6px #1a0a3a",
+                    textShadow: "3px 3px 0 #1a0a3a, 6px 6px 16px rgba(0,0,0,0.6)",
                   }}
                 >
                   KHÔNG THỂ BỊ BỎ RƠI.
                 </span>
               </motion.span>
-            </div>
+            </h1>
+
+            {/* Sub-headline */}
+            <motion.p
+              initial={{ opacity: 0, y: 24 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.45 }}
+              className="font-serif text-[#F6ECCF] leading-[1.3] mb-6 max-w-xl"
+              style={{
+                fontSize: "clamp(1rem, 2.3vw, 1.25rem)",
+                textShadow: "2px 2px 0 #1a0a3a, 4px 4px 12px rgba(0,0,0,0.55)",
+              }}
+            >
+              Hành trình 7 ngày nhận diện gốc rễ nỗi sợ bị bỏ rơi, xây lại giá trị thật của chính mình.
+            </motion.p>
 
             <motion.p
               initial={{ opacity: 0, y: 16 }}
@@ -135,8 +116,19 @@ export function HeroSection() {
               className="text-xs md:text-sm text-gray-100 leading-relaxed mb-5 max-w-xl"
               style={{ textShadow: "0 1px 8px rgba(20,7,40,0.95), 0 0 20px rgba(20,7,40,0.85)" }}
             >
-              Nếu bạn luôn cố gắng trở thành người{" "}
-              <span className="text-[#FFE066] font-semibold">"hiểu chuyện, nhẫn nhịn và hy sinh"</span> để được yêu thương, đây là hành trình 7 ngày giúp bạn nhận diện gốc rễ của nỗi sợ ấy, xây dựng lại cảm giác an toàn từ bên trong và tìm lại giá trị thật của chính mình.
+              Nếu bạn luôn cố{" "}
+              <span className="text-[#FFE066] font-semibold">"hiểu chuyện, nhẫn nhịn, hy sinh"</span>{" "}
+              chỉ để được ở lại — đó không phải tình yêu, đó là sự cố gắng để không bị bỏ rơi. Và càng cố, bạn càng kiệt sức.
+            </motion.p>
+
+            <motion.p
+              initial={{ opacity: 0, y: 16 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.7 }}
+              className="text-xs md:text-sm font-bold uppercase tracking-wide text-[#C9A84C] mb-3"
+              style={{ textShadow: "0 1px 6px rgba(20,7,40,0.95)" }}
+            >
+              Sau 7 ngày, bạn sẽ:
             </motion.p>
 
             <ul className="space-y-2 mb-6 max-w-xl">
@@ -164,7 +156,7 @@ export function HeroSection() {
                 background: "linear-gradient(180deg, #FFE066 0%, #E8C96A 45%, #C9A84C 100%)",
               }}
             >
-              <span className="tracking-wide text-center sm:whitespace-nowrap">TÔI CHỌN NGỪNG TỰ BỎ RƠI CHÍNH MÌNH</span>
+              <span className="tracking-wide text-center sm:whitespace-nowrap">TÔI CHỌN TRỞ THÀNH NGƯỜI KHÔNG THỂ BỊ BỎ RƠI</span>
               <ChevronRight className="w-6 h-6 group-hover:translate-x-1 transition-transform flex-shrink-0" />
             </button>
 
