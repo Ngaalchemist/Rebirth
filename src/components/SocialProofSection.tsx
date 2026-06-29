@@ -104,7 +104,7 @@ export function HeroSection() {
               transition={{ duration: 0.8, delay: 0.55 }}
               className="font-serif font-bold text-[#F6ECCF] leading-[1.3] mb-6 max-w-xl text-base md:text-lg"
               style={{
-                textShadow: "3px 3px 0 #1a0a3a, 5px 5px 13px rgba(0,0,0,0.55)",
+                textShadow: "2px 2px 0 #1a0a3a, 4px 4px 12px rgba(0,0,0,0.55)",
               }}
             >
               Hành trình 7 ngày nhận diện gốc rễ nỗi sợ bị bỏ rơi, xây lại giá trị thật của chính mình.
