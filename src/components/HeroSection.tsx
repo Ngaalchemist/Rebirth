@@ -2,7 +2,6 @@ import { useEffect } from "react";
 import { motion } from "framer-motion";
 import {
   ChevronRight,
-  Sparkles,
   Compass,
   BellOff,
   ShieldCheck,
@@ -12,7 +11,6 @@ import {
   Users,
   Infinity as InfinityIcon,
   Clock,
-  Quote,
 } from "lucide-react";
 import heroBg from "@/assets/images/hero-final.png";
 
@@ -20,13 +18,6 @@ const PLAYFAIR_FONT_URL =
   "https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,800;1,400&display=swap";
 
 const GOLD = "#E8C96A";
-
-const navLinks = [
-  { label: "Chương trình", href: "#program" },
-  { label: "Cộng đồng", href: "#community" },
-  { label: "Kết quả học viên", href: "#results" },
-  { label: "Về Rebirth", href: "#about" },
-];
 
 const features = [
   {
@@ -69,43 +60,8 @@ export function HeroSection() {
 
   return (
     <section className="relative bg-[#0c0420] overflow-hidden">
-      {/* ── NAV BAR ── */}
-      <div className="relative z-20 flex items-center justify-between px-5 sm:px-8 lg:px-12 py-5">
-        <div className="flex items-center gap-2">
-          <Sparkles className="w-5 h-5" style={{ color: GOLD }} />
-          <span
-            className="text-white font-semibold tracking-[0.25em] text-sm md:text-base"
-            style={{ fontFamily: "'Playfair Display', serif" }}
-          >
-            REBIRTH
-          </span>
-        </div>
-
-        <nav className="hidden lg:flex items-center gap-10">
-          {navLinks.map((link) => (
-            <a
-              key={link.label}
-              href={link.href}
-              className="text-sm text-gray-200 hover:text-white transition-colors"
-            >
-              {link.label}
-            </a>
-          ))}
-        </nav>
-
-        <button
-          type="button"
-          onClick={scrollToPricing}
-          className="inline-flex items-center gap-1.5 px-5 py-2.5 text-sm font-bold text-[#140728] rounded-sm hover:-translate-y-0.5 transition-transform"
-          style={{ background: GOLD }}
-        >
-          ĐĂNG KÝ NGAY
-          <ChevronRight className="w-4 h-4" />
-        </button>
-      </div>
-
       {/* ── FULL-BLEED HERO IMAGE ── */}
-      <div className="relative min-h-[560px] md:min-h-[640px] lg:min-h-[700px] flex items-center">
+      <div className="relative min-h-[600px] md:min-h-[680px] lg:min-h-[760px] flex items-center">
         <motion.div
           initial={{ opacity: 0, scale: 1.03 }}
           animate={{ opacity: 1, scale: 1 }}
@@ -118,26 +74,26 @@ export function HeroSection() {
             className="w-full h-full object-cover object-[80%_center] lg:object-center"
           />
           {/* Left fade so the headline column reads clearly */}
-          <div className="absolute inset-0 bg-gradient-to-r from-[#0c0420] from-5% via-[#0c0420]/85 via-48% to-transparent to-75%" />
+          <div className="absolute inset-0 bg-gradient-to-r from-[#0c0420] from-5% via-[#0c0420]/85 via-44% to-transparent to-72%" />
           <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-[#0c0420] to-transparent" />
         </motion.div>
 
-        {/* ── LEFT TEXT COLUMN ── */}
+        {/* ── LEFT TEXT COLUMN (60% of hero width) ── */}
         <div className="relative z-10 w-full px-5 sm:px-8 md:pl-[5%] lg:pl-[6%] lg:pr-0">
-          <div className="w-full md:w-[78%] lg:w-[58%] py-8 lg:py-10 text-left">
+          <div className="w-full md:w-[82%] lg:w-[60%] py-10 lg:py-12 text-left">
             {/* Badge */}
             <motion.p
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7 }}
-              className="text-white text-xs lg:text-sm font-bold tracking-[0.18em] uppercase mb-3"
+              className="text-white text-xs lg:text-sm font-bold tracking-[0.16em] uppercase mb-4"
               style={{ textShadow: "0 1px 6px rgba(20,7,40,0.9)" }}
             >
-              7 Ngày Thoát Khỏi Vòng Lặp
+              Rebirth - 7 Ngày Thoát Khỏi Nỗi Sợ Bị Bỏ Rơi
             </motion.p>
 
-            {/* Headline — white, last line gold */}
-            <h1 className="leading-[1.12] mb-4">
+            {/* Headline — big, bold, white + gold last lines */}
+            <h1 className="leading-[1.08] mb-5">
               <motion.span
                 initial={{ opacity: 0, y: 24 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -145,8 +101,8 @@ export function HeroSection() {
                 className="block font-bold text-white"
                 style={{
                   fontFamily: "'Playfair Display', serif",
-                  fontSize: "clamp(1.9rem, 4.6vw, 3.1rem)",
-                  textShadow: "0 2px 16px rgba(0,0,0,0.55)",
+                  fontSize: "clamp(2.4rem, 6vw, 4.2rem)",
+                  textShadow: "0 2px 18px rgba(0,0,0,0.6)",
                 }}
               >
                 Tại sao những người
@@ -158,8 +114,8 @@ export function HeroSection() {
                 className="block font-bold text-white"
                 style={{
                   fontFamily: "'Playfair Display', serif",
-                  fontSize: "clamp(1.9rem, 4.6vw, 3.1rem)",
-                  textShadow: "0 2px 16px rgba(0,0,0,0.55)",
+                  fontSize: "clamp(2.4rem, 6vw, 4.2rem)",
+                  textShadow: "0 2px 18px rgba(0,0,0,0.6)",
                 }}
               >
                 từng rất yêu bạn...
@@ -172,40 +128,62 @@ export function HeroSection() {
                 style={{
                   color: GOLD,
                   fontFamily: "'Playfair Display', serif",
-                  fontSize: "clamp(1.9rem, 4.6vw, 3.1rem)",
-                  textShadow: "0 2px 16px rgba(0,0,0,0.55)",
+                  fontSize: "clamp(2.4rem, 6vw, 4.2rem)",
+                  textShadow: "0 2px 18px rgba(0,0,0,0.6)",
                 }}
               >
-                cuối cùng lại trở nên lạnh nhạt?
+                cuối cùng lại trở nên
+              </motion.span>
+              <motion.span
+                initial={{ opacity: 0, y: 24 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.4 }}
+                className="block font-bold"
+                style={{
+                  color: GOLD,
+                  fontFamily: "'Playfair Display', serif",
+                  fontSize: "clamp(2.4rem, 6vw, 4.2rem)",
+                  textShadow: "0 2px 18px rgba(0,0,0,0.6)",
+                }}
+              >
+                lạnh nhạt?
               </motion.span>
             </h1>
 
-            {/* Subheadline — white */}
+            {/* Subheadline — "Khóa học online 7 ngày" highlighted gold */}
             <motion.p
               initial={{ opacity: 0, y: 24 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.45 }}
-              className="text-gray-100 mb-6 max-w-xl"
+              transition={{ duration: 0.8, delay: 0.5 }}
+              className="text-gray-100 mb-7 max-w-xl"
               style={{
-                fontSize: "clamp(0.9rem, 1.6vw, 1.05rem)",
+                fontSize: "clamp(0.95rem, 1.7vw, 1.1rem)",
                 textShadow: "0 1px 8px rgba(20,7,40,0.85)",
                 lineHeight: 1.6,
               }}
             >
-              Khóa học online 7 ngày giúp phá vỡ những mô thức cảm xúc khiến
-              bạn liên tục trải qua cùng một kết cục trong tình yêu.
+              <span className="font-semibold" style={{ color: GOLD }}>
+                Khóa học online 7 ngày
+              </span>{" "}
+              giúp phá vỡ những mô thức cảm xúc khiến bạn liên tục trải qua
+              cùng một kết cục trong tình yêu.
             </motion.p>
 
-            {/* Feature row */}
+            {/* Feature row — no boxes, icon centered above text, no dividers */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.7, delay: 0.55 }}
-              className="grid grid-cols-2 md:grid-cols-4 gap-px bg-white/15 border border-white/15 mb-6 max-w-2xl rounded-sm overflow-hidden"
+              transition={{ duration: 0.7, delay: 0.6 }}
+              className="grid grid-cols-2 md:grid-cols-4 gap-x-5 gap-y-6 mb-7 max-w-2xl"
             >
               {features.map((f, i) => (
-                <div key={i} className="bg-[#140728]/70 p-3 flex flex-col gap-2">
-                  <f.icon className="w-5 h-5" style={{ color: GOLD }} />
+                <div key={i} className="flex flex-col items-center text-center gap-2.5">
+                  <div
+                    className="w-11 h-11 rounded-full flex items-center justify-center border"
+                    style={{ borderColor: "rgba(232,201,106,0.45)" }}
+                  >
+                    <f.icon className="w-5 h-5" style={{ color: GOLD }} />
+                  </div>
                   <p className="text-[11px] leading-snug text-gray-100">
                     {f.title}
                   </p>
@@ -217,7 +195,7 @@ export function HeroSection() {
             <motion.button
               initial={{ opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.65 }}
+              transition={{ duration: 0.6, delay: 0.7 }}
               type="button"
               onClick={scrollToPricing}
               data-testid="button-cta-hero"
@@ -248,17 +226,48 @@ export function HeroSection() {
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.8 }}
-          className="hidden lg:block absolute bottom-10 right-8 xl:right-14 z-10 w-64 p-5 rounded-md border border-white/15 bg-[#140728]/70 backdrop-blur-sm"
+          transition={{ duration: 0.8, delay: 0.85 }}
+          className="hidden lg:flex absolute bottom-12 right-8 xl:right-14 z-10 w-64 flex-col gap-2 p-6 rounded-lg border backdrop-blur-md"
+          style={{
+            borderColor: "rgba(232,201,106,0.3)",
+            background:
+              "linear-gradient(160deg, rgba(20,7,40,0.78) 0%, rgba(20,7,40,0.55) 100%)",
+            boxShadow:
+              "0 12px 40px rgba(0,0,0,0.45), inset 0 1px 0 rgba(255,255,255,0.06)",
+          }}
         >
-          <Quote className="w-5 h-5 mb-2" style={{ color: GOLD }} />
-          <p className="text-sm text-gray-100 leading-relaxed italic">
+          <span
+            className="absolute -top-3 left-5 text-4xl leading-none select-none"
+            style={{
+              color: GOLD,
+              fontFamily: "'Playfair Display', serif",
+              textShadow: "0 2px 10px rgba(0,0,0,0.5)",
+            }}
+          >
+            "
+          </span>
+          <p
+            className="text-sm text-gray-100 leading-relaxed italic mt-2"
+            style={{ fontFamily: "'Playfair Display', serif" }}
+          >
             Khi bạn chữa lành mối quan hệ với chính mình, thế giới bên ngoài
             cũng sẽ khác đi.
           </p>
-          <div className="mt-3 text-right">
-            <span style={{ color: GOLD }}>✺</span>
+          <div className="flex items-center justify-between mt-1">
+            <div className="h-px flex-1" style={{ background: "rgba(232,201,106,0.3)" }} />
+            <span className="mx-2 text-xs" style={{ color: GOLD }}>✺</span>
+            <div className="h-px flex-1" style={{ background: "rgba(232,201,106,0.3)" }} />
           </div>
+          <span
+            className="absolute -bottom-1 right-5 text-4xl leading-none select-none rotate-180"
+            style={{
+              color: GOLD,
+              fontFamily: "'Playfair Display', serif",
+              textShadow: "0 2px 10px rgba(0,0,0,0.5)",
+            }}
+          >
+            "
+          </span>
         </motion.div>
       </div>
     </section>
