@@ -4,15 +4,19 @@ import { Users, Brain, Monitor } from "lucide-react";
 const items = [
   {
     icon: Users,
-    text: "Hơn 500+ phụ nữ đã đồng hành trong các buổi healing 1:1",
+    text: "Hơn 500+ phụ nữ đã đồng hành trong các phiên 1:1",
   },
   {
     icon: Brain,
-    text: "Giải phóng nỗi đau gốc • Làm chủ sự bình an • Tái lập trình giá trị bản thân",
+    text: "Giải phóng nỗi đau gốc • 
+      Làm chủ sự bình an • 
+      Tái lập trình giá trị bản thân",
   },
   {
     icon: Monitor,
-    text: "Học online • Thực hành ngắn, không lý thuyết sáo rỗng",
+    text: "Học online • 
+      Thực hành ngắn • 
+      Không lý thuyết sáo rỗng",
   },
 ];
 
