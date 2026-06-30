@@ -22,11 +22,11 @@ const GOLD = "#E8C96A";
 const features = [
   {
     icon: Compass,
-    title: "Hiểu rõ vì sao mình luôn kết thúc ở cùng một nỗi đau",
+    title: "Nhận diện chính xác mô thức khiến bạn liên tục lặp lại cùng một nỗi đau trong tình yêu",
   },
   {
     icon: BellOff,
-    title: "Không còn hoang mang khi ai đó trở nên lạnh nhạt",
+    title: "Không còn hoảng loạn khi ai đó trở nên lạnh nhạt",
   },
   {
     icon: ShieldCheck,
@@ -34,7 +34,7 @@ const features = [
   },
   {
     icon: Users2,
-    title: "Cộng đồng riêng đồng hành và hỗ trợ 24/7",
+    title: "Ngừng tìm kiếm giá trị bản thân từ sự chú ý của người khác",
   },
 ];
 
@@ -182,9 +182,7 @@ export function HeroSection() {
               <span className="font-semibold" style={{ color: GOLD }}>
                 Khóa học online 7 ngày
               </span>{" "}
-              giúp bạn chữa lành nỗi sợ bị bỏ rơi từ gốc rễ, phá vỡ những mô
-              thức tình yêu lặp đi lặp lại và lấy lại giá trị bản thân từ bên
-              trong.
+              giúp bạn nhận diện gốc rễ nỗi sợ bị bỏ rơi, phá vỡ những mô thức cũ và xây dựng cảm giác đủ đầy từ bên trong.
             </motion.p>
 
             {/* Feature row — no boxes, icon centered above text, no dividers */}
@@ -271,8 +269,7 @@ export function HeroSection() {
               fontSize: "0.8rem",
             }}
           >
-            Khi bạn chữa lành mối quan hệ với chính mình, thế giới bên ngoài
-            cũng sẽ khác đi.
+            Thế giới không đối xử với bạn theo cách bạn muốn. Nó đối xử với bạn theo đúng cách bạn đang đối xử với chính mình.
             <span
               className="ml-1 align-baseline"
               style={{ color: GOLD, fontWeight: 400 }}
