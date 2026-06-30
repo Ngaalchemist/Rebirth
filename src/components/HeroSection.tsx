@@ -22,7 +22,7 @@ const GOLD = "#E8C96A";
 const features = [
   {
     icon: Compass,
-    title: "Hiểu rõ vì sao mình luôn kết thúc ở cùng một nơi",
+    title: "Hiểu rõ vì sao mình luôn kết thúc ở cùng một nỗi đau",
   },
   {
     icon: BellOff,
@@ -86,8 +86,8 @@ export function HeroSection() {
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7 }}
-              className="text-white text-xs lg:text-sm font-bold tracking-[0.16em] uppercase mb-4"
-              style={{ textShadow: "0 1px 6px rgba(20,7,40,0.9)" }}
+              className="text-xs lg:text-sm font-bold tracking-[0.16em] uppercase mb-4"
+              style={{ color: GOLD, textShadow: "0 1px 6px rgba(20,7,40,0.9)" }}
             >
               Rebirth - 7 Ngày Thoát Khỏi Nỗi Sợ Bị Bỏ Rơi
             </motion.p>
@@ -184,7 +184,7 @@ export function HeroSection() {
                   >
                     <f.icon className="w-5 h-5" style={{ color: GOLD }} />
                   </div>
-                  <p className="text-[11px] leading-snug text-gray-100">
+                  <p className="text-[12.5px] leading-snug text-gray-100">
                     {f.title}
                   </p>
                 </div>
@@ -222,52 +222,31 @@ export function HeroSection() {
           </div>
         </div>
 
-        {/* ── QUOTE CARD (bottom right, floating on portrait) ── */}
+        {/* ── QUOTE (bottom right, floating beside the portrait, no box) ── */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.85 }}
-          className="hidden lg:flex absolute bottom-12 right-8 xl:right-14 z-10 w-64 flex-col gap-2 p-6 rounded-lg border backdrop-blur-md"
-          style={{
-            borderColor: "rgba(232,201,106,0.3)",
-            background:
-              "linear-gradient(160deg, rgba(20,7,40,0.78) 0%, rgba(20,7,40,0.55) 100%)",
-            boxShadow:
-              "0 12px 40px rgba(0,0,0,0.45), inset 0 1px 0 rgba(255,255,255,0.06)",
-          }}
+          className="hidden lg:block absolute bottom-14 right-8 xl:right-16 z-10 w-60 text-right"
         >
-          <span
-            className="absolute -top-3 left-5 text-4xl leading-none select-none"
-            style={{
-              color: GOLD,
-              fontFamily: "'Playfair Display', serif",
-              textShadow: "0 2px 10px rgba(0,0,0,0.5)",
-            }}
-          >
-            "
-          </span>
           <p
-            className="text-sm text-gray-100 leading-relaxed italic mt-2"
-            style={{ fontFamily: "'Playfair Display', serif" }}
-          >
-            Khi bạn chữa lành mối quan hệ với chính mình, thế giới bên ngoài
-            cũng sẽ khác đi.
-          </p>
-          <div className="flex items-center justify-between mt-1">
-            <div className="h-px flex-1" style={{ background: "rgba(232,201,106,0.3)" }} />
-            <span className="mx-2 text-xs" style={{ color: GOLD }}>✺</span>
-            <div className="h-px flex-1" style={{ background: "rgba(232,201,106,0.3)" }} />
-          </div>
-          <span
-            className="absolute -bottom-1 right-5 text-4xl leading-none select-none rotate-180"
+            className="text-base text-gray-50 leading-relaxed italic"
             style={{
-              color: GOLD,
               fontFamily: "'Playfair Display', serif",
-              textShadow: "0 2px 10px rgba(0,0,0,0.5)",
+              textShadow: "0 2px 10px rgba(0,0,0,0.65)",
             }}
           >
-            "
-          </span>
+            <span style={{ color: GOLD }}>“</span>
+            Khi bạn chữa lành mối quan hệ với chính mình, thế giới bên ngoài
+            cũng sẽ khác đi
+            <span style={{ color: GOLD }}>”</span>
+          </p>
+          <p
+            className="mt-2 text-xs tracking-wide"
+            style={{ color: GOLD, textShadow: "0 1px 6px rgba(0,0,0,0.6)" }}
+          >
+            - Nga Alchemist
+          </p>
         </motion.div>
       </div>
     </section>
