@@ -1,11 +1,15 @@
+import { useEffect } from "react";
 import { motion } from "framer-motion";
 import { ChevronRight, Monitor, Play, Users, Infinity as InfinityIcon, Clock } from "lucide-react";
 import heroBg from "@/assets/images/hero-final.png";
 
+const PLAYFAIR_FONT_URL =
+  "https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,800;1,400&display=swap";
+
 const checkmarks = [
-  { gold: "Lấy lại năng lượng đã mất", rest: " vì cố gắng để được ở lại." },
-  { gold: "Chấm dứt sự nhục nhã", rest: " khi phải cầu xin sự chú ý từ người khác." },
-  { gold: "Xây dựng cảm giác đủ đầy", rest: " và vững vàng từ bên trong." },
+  { gold: "Hiểu rõ vì sao", rest: " mình luôn kết thúc ở cùng một nỗi đau." },
+  { gold: "Không còn hoảng loạn", rest: " khi ai đó trở nên lạnh nhạt hoặc thay đổi." },
+  { gold: "Lấy lại sự bình an, tự tin", rest: " và quyền lựa chọn trong tình yêu." },
 ];
 
 const trust = [
@@ -17,6 +21,14 @@ const trust = [
 ];
 
 export function HeroSection() {
+  useEffect(() => {
+    if (document.querySelector(`link[href="${PLAYFAIR_FONT_URL}"]`)) return;
+    const link = document.createElement("link");
+    link.rel = "stylesheet";
+    link.href = PLAYFAIR_FONT_URL;
+    document.head.appendChild(link);
+  }, []);
+
   const scrollToPricing = () =>
     document.getElementById("pricing")?.scrollIntoView({ behavior: "smooth" });
 
@@ -48,85 +60,85 @@ export function HeroSection() {
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7 }}
-              className="text-[#C9A84C] text-xs lg:text-sm font-semibold tracking-[0.28em] uppercase mb-4"
+              className="text-[#E8C96A] text-xs lg:text-sm font-semibold tracking-[0.28em] uppercase mb-4"
               style={{ textShadow: "0 1px 6px rgba(20,7,40,0.9)" }}
             >
               Rebirth
             </motion.p>
 
             {/* Headline — left aligned, extends across toward the portrait */}
-            <h1 className="leading-[1.08] mb-6 lg:mb-8">
+            <h1 className="leading-[1.08] mb-3 lg:mb-4">
               <motion.span
                 initial={{ opacity: 0, y: 24 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.15 }}
-                className="block font-serif font-bold text-[#F6ECCF]"
+                className="block font-bold text-[#B8902E]"
                 style={{
-                  fontSize: "clamp(1.92rem, 5.2vw, 3.68rem)",
+                  fontFamily: "'Playfair Display', serif",
+                  fontSize: "clamp(1.92rem, 5.2vw, 3.4rem)",
                   textShadow: "3px 3px 0 #1a0a3a, 6px 6px 18px rgba(0,0,0,0.6)",
                 }}
               >
-                Đừng nỗ lực để được yêu.
+                Tại sao những người từng rất yêu bạn...
               </motion.span>
               <motion.span
                 initial={{ opacity: 0, y: 24 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.3 }}
-                className="block font-serif font-bold text-[#F6ECCF] mt-2"
+                className="block font-bold text-[#B8902E] mt-2"
                 style={{
-                  fontSize: "clamp(1.84rem, 4.96vw, 3.52rem)",
+                  fontFamily: "'Playfair Display', serif",
+                  fontSize: "clamp(1.92rem, 5.2vw, 3.4rem)",
                   textShadow: "3px 3px 0 #1a0a3a, 6px 6px 18px rgba(0,0,0,0.6)",
                 }}
               >
-                Hãy trở thành người
-              </motion.span>
-              <motion.span
-                initial={{ opacity: 0, y: 24 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 0.4 }}
-                className="block uppercase text-[#E8C96A] mt-2"
-                style={{
-                  fontFamily: "'Playfair Display SC', serif",
-                  fontWeight: 700,
-                  fontSize: "clamp(2.3rem, 6.2vw, 4.4rem)",
-                  WebkitTextStroke: "0.8px #1a0a3a",
-                  textShadow: "4px 4px 0 #1a0a3a, 8px 8px 20px rgba(0,0,0,0.65)",
-                }}
-              >
-                KHÔNG THỂ BỊ BỎ RƠI.
+                cuối cùng lại trở nên lạnh nhạt?
               </motion.span>
             </h1>
 
-            {/* Sub-headline */}
+            {/* Highlight — subheadline */}
             <motion.p
               initial={{ opacity: 0, y: 24 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.55 }}
-              className="font-serif font-bold text-[#F6ECCF] leading-[1.3] mb-6 max-w-xl text-lg md:text-xl"
+              transition={{ duration: 0.8, delay: 0.42 }}
+              className="block font-bold text-[#F2DFA0] mb-5 lg:mb-6 max-w-xl"
               style={{
-                textShadow: "2px 2px 0 #1a0a3a, 4px 4px 12px rgba(0,0,0,0.55)",
+                fontFamily: "'Playfair Display', serif",
+                fontSize: "clamp(1.3rem, 2.8vw, 1.7rem)",
+                textShadow: "3px 3px 0 #1a0a3a, 6px 6px 18px rgba(0,0,0,0.6)",
+                lineHeight: 1.35,
               }}
             >
-              Hành trình 7 ngày nhận diện gốc rễ nỗi sợ bị bỏ rơi, xây lại giá trị thật của chính mình.
+              Hành trình 7 ngày giúp bạn phá vỡ những mô thức cảm xúc khiến mình liên tục trải qua cùng một kết cục trong tình yêu.
             </motion.p>
 
+            {/* Reveal — part 1 */}
             <motion.p
               initial={{ opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.65 }}
-              className="text-xs md:text-sm text-gray-100 leading-relaxed mb-5 max-w-xl"
+              transition={{ duration: 0.6, delay: 0.5 }}
+              className="text-sm md:text-base font-bold text-gray-50 mb-3 max-w-xl"
+              style={{ textShadow: "0 1px 6px rgba(20,7,40,0.95)" }}
+            >
+              Sự thật là: Không phải vì bạn chưa đủ tốt.
+            </motion.p>
+
+            {/* Reveal — part 2 */}
+            <motion.p
+              initial={{ opacity: 0, y: 16 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.6 }}
+              className="text-xs md:text-sm text-gray-100 leading-relaxed mb-6 max-w-xl"
               style={{ textShadow: "0 1px 8px rgba(20,7,40,0.95), 0 0 20px rgba(20,7,40,0.85)" }}
             >
-              Nếu bạn luôn cố{" "}
-              <span className="text-[#FFE066] font-semibold">"hiểu chuyện, nhẫn nhịn, hy sinh"</span>{" "}
-              chỉ để được ở lại — đó không phải tình yêu, đó là sự cố gắng để không bị bỏ rơi. Và càng cố, bạn càng kiệt sức.
+              Mà vì những tổn thương chưa được chữa lành đang vô thức điều khiển cách bạn yêu, cách bạn lựa chọn đối tượng và cách bạn phản ứng trong các mối quan hệ.
             </motion.p>
 
             <motion.p
               initial={{ opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.7 }}
-              className="text-[11px] md:text-xs font-bold uppercase tracking-wide text-[#C9A84C] mb-2"
+              className="text-[11px] md:text-xs font-bold uppercase tracking-wide text-[#E8C96A] mb-2"
               style={{ textShadow: "0 1px 6px rgba(20,7,40,0.95)" }}
             >
               Sau 7 ngày, bạn sẽ:
@@ -142,7 +154,7 @@ export function HeroSection() {
                   className="flex items-start gap-2.5 text-xs md:text-sm text-gray-50"
                   style={{ textShadow: "0 1px 6px rgba(20,7,40,0.95)" }}
                 >
-                  <span className="text-[#C9A84C] mt-0.5 flex-shrink-0 font-bold">✓</span>
+                  <span className="text-[#E8C96A] mt-0.5 flex-shrink-0 font-bold">✓</span>
                   <span><span className="text-[#E8C96A] font-bold">{c.gold}</span>{c.rest}</span>
                 </motion.li>
               ))}
@@ -152,19 +164,19 @@ export function HeroSection() {
               type="button"
               onClick={scrollToPricing}
               data-testid="button-cta-hero"
-              className="group inline-flex items-center justify-center gap-3 px-7 md:px-9 py-4 md:py-5 rounded-none font-bold text-base md:text-lg text-[#140728] transition-all duration-200 shadow-[0_8px_30px_rgba(201,168,76,0.45)] hover:shadow-[0_16px_50px_rgba(255,224,102,0.75)] hover:-translate-y-1 hover:scale-[1.02] active:scale-[0.99] border border-[#FFE066]/50"
+              className="group inline-flex items-center justify-center gap-3 px-7 md:px-9 py-4 md:py-5 rounded-none font-bold text-base md:text-lg text-[#140728] transition-all duration-200 shadow-[0_8px_30px_rgba(232,201,106,0.4)] hover:shadow-[0_16px_50px_rgba(232,201,106,0.6)] hover:-translate-y-1 hover:scale-[1.02] active:scale-[0.99] border border-[#E8C96A]/50"
               style={{
-                background: "linear-gradient(180deg, #FFE066 0%, #E8C96A 45%, #C9A84C 100%)",
+                background: "#E8C96A",
               }}
             >
-              <span className="tracking-wide text-center sm:whitespace-nowrap">TÔI CHỌN TRỞ THÀNH NGƯỜI KHÔNG THỂ BỊ BỎ RƠI</span>
+              <span className="tracking-wide text-center sm:whitespace-nowrap">BẮT ĐẦU HÀNH TRÌNH 7 NGÀY</span>
               <ChevronRight className="w-6 h-6 group-hover:translate-x-1 transition-transform flex-shrink-0" />
             </button>
 
             <div className="flex flex-wrap md:flex-nowrap items-center gap-x-3 lg:gap-x-4 gap-y-2 mt-6 text-xs md:text-sm text-gray-200">
               {trust.map((t, i) => (
                 <div key={i} className="flex items-center gap-1.5 whitespace-nowrap flex-shrink-0">
-                  <t.icon className="w-3.5 h-3.5 text-[#C9A84C] flex-shrink-0" />
+                  <t.icon className="w-3.5 h-3.5 text-[#E8C96A] flex-shrink-0" />
                   <span style={{ textShadow: "0 1px 4px rgba(20,7,40,0.95)" }}>{t.label}</span>
                 </div>
               ))}
