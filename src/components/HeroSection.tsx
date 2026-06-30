@@ -269,7 +269,7 @@ export function HeroSection() {
               fontSize: "0.74rem",
             }}
           >
-            Tình yêu không làm bạn đau. Những vết thương chưa lành mới làm điều đó.
+            Bạn không đau vì họ rời đi. Bạn đau vì họ chạm vào nơi chưa từng được chữa lành..
             <span
               className="ml-1 align-baseline"
               style={{ color: GOLD, fontWeight: 400 }}
