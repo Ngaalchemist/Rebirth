@@ -26,7 +26,7 @@ const features = [
   },
   {
     icon: BellOff,
-    title: "Không còn hoang mang khi ai đó trở nên lạnh nhạt",
+    title: "Không còn hoảng loạn khi ai đó trở nên lạnh nhạt",
   },
   {
     icon: ShieldCheck,
@@ -34,7 +34,7 @@ const features = [
   },
   {
     icon: Users2,
-    title: "Cộng đồng riêng đồng hành và hỗ trợ 24/7",
+    title: "Ngừng tìm kiếm giá trị bản thân từ sự chú ý của người khác",
   },
 ];
 
@@ -165,8 +165,7 @@ export function HeroSection() {
               <span className="font-semibold" style={{ color: GOLD }}>
                 Khóa học online 7 ngày
               </span>{" "}
-              giúp phá vỡ những mô thức cảm xúc khiến bạn liên tục trải qua
-              cùng một kết cục trong tình yêu.
+              giúp bạn chấm dứt vòng lặp bị bỏ rơi, thất vọng và tự nghi ngờ bản thân trong tình yêu.
             </motion.p>
 
             {/* Feature row — no boxes, icon centered above text, no dividers */}
