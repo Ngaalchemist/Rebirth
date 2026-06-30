@@ -67,15 +67,15 @@ export function HeroSection() {
             </motion.p>
 
             {/* Headline — left aligned, extends across toward the portrait */}
-            <h1 className="leading-[1.08] mb-3 lg:mb-4">
+            <h1 className="leading-[1.08] mb-3 lg:mb-4 w-full md:w-[120%] lg:w-[145%]">
               <motion.span
                 initial={{ opacity: 0, y: 24 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.15 }}
-                className="block font-bold text-[#B8902E]"
+                className="block font-bold text-[#B8902E] whitespace-nowrap"
                 style={{
                   fontFamily: "'Playfair Display', serif",
-                  fontSize: "clamp(1.92rem, 5.2vw, 3.4rem)",
+                  fontSize: "clamp(1.4rem, 3.6vw, 2.9rem)",
                   textShadow: "3px 3px 0 #1a0a3a, 6px 6px 18px rgba(0,0,0,0.6)",
                 }}
               >
@@ -85,10 +85,10 @@ export function HeroSection() {
                 initial={{ opacity: 0, y: 24 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.3 }}
-                className="block font-bold text-[#B8902E] mt-2"
+                className="block font-bold text-[#B8902E] mt-2 whitespace-nowrap"
                 style={{
                   fontFamily: "'Playfair Display', serif",
-                  fontSize: "clamp(1.92rem, 5.2vw, 3.4rem)",
+                  fontSize: "clamp(1.4rem, 3.6vw, 2.9rem)",
                   textShadow: "3px 3px 0 #1a0a3a, 6px 6px 18px rgba(0,0,0,0.6)",
                 }}
               >
@@ -101,7 +101,7 @@ export function HeroSection() {
               initial={{ opacity: 0, y: 24 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.42 }}
-              className="block font-bold text-[#F2DFA0] mb-5 lg:mb-6 max-w-xl"
+              className="font-bold text-[#F2DFA0] mb-5 lg:mb-6 max-w-xl"
               style={{
                 fontFamily: "'Playfair Display', serif",
                 fontSize: "clamp(1.1rem, 2.4vw, 1.45rem)",
@@ -109,7 +109,9 @@ export function HeroSection() {
                 lineHeight: 1.35,
               }}
             >
-              Hành trình 7 ngày giúp phá vỡ những mô thức cảm xúc khiến bạn liên tục trải qua cùng một kết cục trong tình yêu.
+              Khóa học online 7 ngày giúp phá vỡ những mô thức cảm xúc
+              <br />
+              khiến bạn liên tục trải qua cùng một kết cục trong tình yêu.
             </motion.p>
 
             {/* Reveal — part 1 */}
@@ -164,10 +166,10 @@ export function HeroSection() {
               type="button"
               onClick={scrollToPricing}
               data-testid="button-cta-hero"
-              className="group flex items-center justify-center gap-3 px-7 md:px-9 py-4 md:py-5 rounded-none font-bold text-base md:text-lg text-[#140728] transition-all duration-200 shadow-[0_8px_30px_rgba(232,201,106,0.4)] hover:shadow-[0_16px_50px_rgba(232,201,106,0.6)] hover:-translate-y-1 hover:scale-[1.02] active:scale-[0.99] border border-[#E8C96A]/50"
+              className="group flex items-center justify-center gap-3 px-7 md:px-9 py-4 md:py-5 rounded-none font-bold text-lg md:text-xl text-[#140728] transition-all duration-200 shadow-[0_8px_30px_rgba(232,201,106,0.4)] hover:shadow-[0_16px_50px_rgba(232,201,106,0.6)] hover:-translate-y-1 hover:scale-[1.02] active:scale-[0.99] border border-[#E8C96A]/50"
               style={{
                 background: "#E8C96A",
-                width: "50vw",
+                width: "45vw",
                 maxWidth: "100%",
               }}
             >
