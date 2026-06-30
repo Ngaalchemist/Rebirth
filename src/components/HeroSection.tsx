@@ -243,7 +243,7 @@ export function HeroSection() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.85 }}
-          className="hidden lg:block absolute top-[36%] right-4 xl:right-8 z-10 w-[200px] p-3.5 rounded-md border"
+          className="hidden lg:block absolute top-[36%] right-2 xl:right-4 z-10 w-[180px] p-3 rounded-md border"
           style={{
             borderColor: "rgba(232,201,106,0.25)",
             backgroundColor: "rgba(10,5,20,0.4)",
@@ -266,7 +266,7 @@ export function HeroSection() {
               color: GOLD,
               fontWeight: 400,
               fontStyle: "normal",
-              fontSize: "0.8rem",
+              fontSize: "0.74rem",
             }}
           >
             Tình yêu không làm bạn đau. Những vết thương chưa lành mới làm điều đó.
