@@ -8,9 +8,7 @@ const items = [
   },
   {
     icon: Brain,
-    text: "Giải phóng nỗi đau gốc • 
-      Làm chủ sự bình an • 
-      Tái lập trình giá trị bản thân",
+    text: "Giải phóng nỗi đau gốc • Làm chủ sự bình an • Tái lập trình giá trị bản thân",
   },
   {
     icon: Monitor,
