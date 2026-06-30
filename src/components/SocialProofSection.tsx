@@ -4,7 +4,7 @@ import { Users, Brain, Monitor } from "lucide-react";
 const items = [
   {
     icon: Users,
-    text: "Hơn 500+ phụ nữ đã đồng hành trong các session 1:1",
+    text: "Hơn 500+ phụ nữ đã đồng hành trong các phiên 1:1",
   },
   {
     icon: Brain,
