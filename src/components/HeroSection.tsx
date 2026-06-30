@@ -227,7 +227,7 @@ export function HeroSection() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.85 }}
-          className="hidden lg:block absolute top-[27%] right-0 z-10 w-48 p-4 rounded-md border"
+          className="hidden lg:block absolute top-[27%] right-0 z-10 w-[136px] p-2.5 rounded-md border"
           style={{
             borderColor: "rgba(232,201,106,0.25)",
             backgroundColor: "rgba(10,5,20,0.4)",
@@ -235,7 +235,7 @@ export function HeroSection() {
           }}
         >
           <span
-            className="block text-2xl leading-none select-none mb-1"
+            className="block text-xl leading-none select-none mb-1"
             style={{
               color: GOLD,
               fontWeight: 400,
@@ -250,7 +250,7 @@ export function HeroSection() {
               color: GOLD,
               fontWeight: 400,
               fontStyle: "normal",
-              fontSize: "1.05rem",
+              fontSize: "0.78rem",
             }}
           >
             Khi bạn chữa lành mối quan hệ với chính mình, thế giới bên ngoài
@@ -264,7 +264,7 @@ export function HeroSection() {
               - Nga Alchemist
             </span>
             <span
-              className="text-2xl leading-none select-none"
+              className="text-xl leading-none select-none"
               style={{
                 color: GOLD,
                 fontWeight: 400,
