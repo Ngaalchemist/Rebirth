@@ -79,8 +79,8 @@ export function HeroSection() {
         </motion.div>
 
         {/* ── LEFT TEXT COLUMN (60% of hero width) ── */}
-        <div className="relative z-10 w-full px-5 sm:px-8 md:pl-[5%] lg:pl-[6%] lg:pr-0">
-          <div className="w-full md:w-[82%] lg:w-[60%] py-10 lg:py-12 text-left">
+        <div className="relative z-10 w-full px-5 sm:px-8 md:pl-[10%] lg:pl-[13%] lg:pr-0">
+          <div className="w-full md:w-[80%] lg:w-[56%] py-10 lg:py-12 text-left">
             {/* Badge */}
             <motion.p
               initial={{ opacity: 0, y: 10 }}
