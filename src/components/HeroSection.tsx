@@ -80,7 +80,7 @@ export function HeroSection() {
 
         {/* ── LEFT TEXT COLUMN (60% of hero width) ── */}
         <div className="relative z-10 w-full px-5 sm:px-8 md:pl-[10%] lg:pl-[13%] lg:pr-0">
-          <div className="w-full md:w-[80%] lg:w-[56%] py-10 lg:py-12 text-left">
+          <div className="w-full md:w-[88%] lg:w-[66%] py-8 lg:py-9 text-left">
             {/* Badge */}
             <motion.p
               initial={{ opacity: 0, y: 10 }}
@@ -155,7 +155,7 @@ export function HeroSection() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.45 }}
-              className="text-gray-200 mb-4 max-w-xl"
+              className="text-gray-200 mb-4 max-w-xl line-clamp-2"
               style={{
                 fontSize: "clamp(0.95rem, 1.7vw, 1.1rem)",
                 textShadow: "0 1px 8px rgba(20,7,40,0.85)",
@@ -172,7 +172,7 @@ export function HeroSection() {
               initial={{ opacity: 0, y: 24 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.5 }}
-              className="text-gray-100 mb-7 max-w-xl"
+              className="text-gray-100 mb-7 max-w-xl line-clamp-2"
               style={{
                 fontSize: "clamp(0.95rem, 1.7vw, 1.1rem)",
                 textShadow: "0 1px 8px rgba(20,7,40,0.85)",
@@ -238,12 +238,16 @@ export function HeroSection() {
           </div>
         </div>
 
-        {/* ── QUOTE — editorial pull-quote style, no box, no border ── */}
+        {/* ── QUOTE — small floating pull-quote above the shoulder, dark translucent box ── */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.85 }}
-          className="hidden lg:block absolute top-[38%] right-6 xl:right-12 z-10 w-[230px] text-right"
+          className="hidden lg:block absolute top-[8%] right-8 xl:right-14 z-10 w-[170px] text-right px-3.5 py-3 rounded-md backdrop-blur-[2px]"
+          style={{
+            backgroundColor: "rgba(8,3,22,0.4)",
+            boxShadow: "0 8px 24px rgba(0,0,0,0.25)",
+          }}
         >
           <p
             style={{
@@ -251,10 +255,10 @@ export function HeroSection() {
               fontStyle: "italic",
               fontWeight: 500,
               fontFamily: "'Playfair Display', serif",
-              fontSize: "1.05rem",
-              lineHeight: 1.6,
+              fontSize: "0.8rem",
+              lineHeight: 1.55,
               letterSpacing: "0.01em",
-              textShadow: "0 2px 16px rgba(0,0,0,0.65), 0 6px 30px rgba(0,0,0,0.4)",
+              textShadow: "0 2px 10px rgba(0,0,0,0.6)",
             }}
           >
             Bạn không đau vì họ rời đi.
@@ -264,11 +268,11 @@ export function HeroSection() {
             chưa từng được chữa lành.
           </p>
           <div
-            className="mt-3 ml-auto w-9 h-px"
+            className="mt-2.5 ml-auto w-7 h-px"
             style={{ backgroundColor: "rgba(232,201,106,0.7)" }}
           />
           <p
-            className="mt-2.5 text-[10px] tracking-[0.22em] uppercase"
+            className="mt-2 text-[9px] tracking-[0.2em] uppercase"
             style={{
               color: "rgba(232,201,106,0.85)",
               fontWeight: 600,
