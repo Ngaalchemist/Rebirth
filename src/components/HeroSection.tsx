@@ -155,7 +155,7 @@ export function HeroSection() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.45 }}
-              className="text-gray-200 mb-4 max-w-xl line-clamp-2"
+              className="text-gray-200 mb-4"
               style={{
                 fontSize: "clamp(0.95rem, 1.7vw, 1.1rem)",
                 textShadow: "0 1px 8px rgba(20,7,40,0.85)",
@@ -172,7 +172,7 @@ export function HeroSection() {
               initial={{ opacity: 0, y: 24 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.5 }}
-              className="text-gray-100 mb-7 max-w-xl line-clamp-2"
+              className="text-gray-100 mb-7"
               style={{
                 fontSize: "clamp(0.95rem, 1.7vw, 1.1rem)",
                 textShadow: "0 1px 8px rgba(20,7,40,0.85)",
@@ -243,7 +243,7 @@ export function HeroSection() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.85 }}
-          className="hidden lg:block absolute top-[8%] right-8 xl:right-14 z-10 w-[170px] text-right px-3.5 py-3 rounded-md backdrop-blur-[2px]"
+          className="hidden lg:block absolute top-[8%] right-8 xl:right-14 z-10 w-max max-w-[260px] text-right px-3.5 py-3 rounded-md backdrop-blur-[2px]"
           style={{
             backgroundColor: "rgba(8,3,22,0.4)",
             boxShadow: "0 8px 24px rgba(0,0,0,0.25)",
@@ -259,6 +259,7 @@ export function HeroSection() {
               lineHeight: 1.55,
               letterSpacing: "0.01em",
               textShadow: "0 2px 10px rgba(0,0,0,0.6)",
+              whiteSpace: "nowrap",
             }}
           >
             Bạn không đau vì họ rời đi.
